@@ -49,11 +49,20 @@
           modest — the flange will deform before the bolt yields.</p>
       </div>
       <h2 style="margin-top:2.4rem">Items in the range</h2>
+      <div class="hub-chips" id="hubChips">
+        <button type="button" class="chip-btn is-on" data-system="">All systems</button>
+        <button type="button" class="chip-btn" data-system="cam-and-groove">Cam &amp; Groove</button>
+        <button type="button" class="chip-btn" data-system="guillemin" disabled>Guillemin (soon)</button>
+        <button type="button" class="chip-btn" data-system="storz" disabled>Storz (soon)</button>
+        <button type="button" class="chip-btn" data-system="sanitary" disabled>Sanitary (soon)</button>
+      </div>
       <div class="table-wrap" style="margin-top:1rem">
-        <table class="data">
-          <caption>Flange-end items. Other systems will be added as the catalogue is digitised.</caption>
+        <table class="data" id="hubTable">
+          <caption>Flange-end items. Switch system above without leaving this page.</caption>
           <thead><tr><th>Product</th><th>System</th><th>Coupling end</th><th>Flange end</th><th>Material</th></tr></thead>
-          <tbody><tr class="empty-row"><td colspan="5">No items yet.</td></tr></tbody>
+          <tbody><tr data-system="cam-and-groove"><td><a href="../../products/camlock-cg-male-adapter-round-din-flange/">Camlock male adapter, DIN round flange</a></td>
+          <td>Cam &amp; Groove</td><td>—</td><td>DIN round flange</td><td>316</td></tr><tr data-system="cam-and-groove"><td><a href="../../products/camlock-cg-female-coupler-round-din-flange/">Camlock female coupler, DIN round flange</a></td>
+          <td>Cam &amp; Groove</td><td>—</td><td>DIN round flange</td><td>316</td></tr></tbody>
         </table>
       </div>
     </div>

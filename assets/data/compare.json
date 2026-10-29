@@ -1,0 +1,222 @@
+[
+ {
+  "slug": "camlock-type-a-male-adapter-inside-thread",
+  "name": "Camlock Type A male adapter, inside thread",
+  "end_a": "Camlock male (arm)",
+  "end_b": "BSPP female thread",
+  "materials": "316, Aluminium, Brass, Plastic",
+  "sizes": "1/2\"–8\"",
+  "standards": "AA59326, EN 14420-7",
+  "codes": 78
+ },
+ {
+  "slug": "camlock-type-b-female-coupler-outside-thread",
+  "name": "Camlock Type B female coupler, outside thread",
+  "end_a": "Camlock female (coupler)",
+  "end_b": "BSPP male thread",
+  "materials": "316, Aluminium, Brass, Plastic",
+  "sizes": "—",
+  "standards": "AA59326",
+  "codes": 101
+ },
+ {
+  "slug": "camlock-type-bw-welding-adapters-and-couplers",
+  "name": "Camlock butt-weld adapters and couplers",
+  "end_a": "Camlock",
+  "end_b": "Butt weld",
+  "materials": "316",
+  "sizes": "—",
+  "standards": "—",
+  "codes": 0
+ },
+ {
+  "slug": "camlock-type-c-female-coupler-hose-shank",
+  "name": "Camlock Type C female coupler, hose shank",
+  "end_a": "Camlock female (coupler)",
+  "end_b": "Hose shank",
+  "materials": "316, Aluminium, Brass, Plastic",
+  "sizes": "—",
+  "standards": "AA59326, EN 14420-7",
+  "codes": 99
+ },
+ {
+  "slug": "camlock-type-dp-dust-plug",
+  "name": "Camlock Type DP dust plug",
+  "end_a": "Blind plug",
+  "end_b": "Camlock male (arm)",
+  "materials": "316, Aluminium, Brass, Plastic",
+  "sizes": "—",
+  "standards": "—",
+  "codes": 0
+ },
+ {
+  "slug": "camlock-type-d-female-coupler-inside-thread",
+  "name": "Camlock Type D female coupler, inside thread",
+  "end_a": "Camlock female (coupler)",
+  "end_b": "BSPP female thread",
+  "materials": "316, Aluminium, Brass, Plastic",
+  "sizes": "—",
+  "standards": "AA59326, EN 14420-7",
+  "codes": 91
+ },
+ {
+  "slug": "camlock-type-dc-dust-cap",
+  "name": "Camlock Type DC dust cap",
+  "end_a": "Blind cap",
+  "end_b": "Camlock female (coupler)",
+  "materials": "316, Aluminium, Brass, Plastic",
+  "sizes": "—",
+  "standards": "—",
+  "codes": 0
+ },
+ {
+  "slug": "camlock-type-da-coupling-adapter",
+  "name": "Camlock Type DA coupling adapter, reducing",
+  "end_a": "Camlock female (coupler)",
+  "end_b": "Camlock male (arm), smaller size",
+  "materials": "Aluminium",
+  "sizes": "—",
+  "standards": "—",
+  "codes": 26
+ },
+ {
+  "slug": "camlock-type-dd-double-coupler",
+  "name": "Camlock Type DD double coupler",
+  "end_a": "Camlock female (coupler)",
+  "end_b": "Camlock female (coupler)",
+  "materials": "Aluminium",
+  "sizes": "—",
+  "standards": "—",
+  "codes": 2
+ },
+ {
+  "slug": "camlock-type-e-male-adapter-hose-shank",
+  "name": "Camlock Type E male adapter, hose shank",
+  "end_a": "Camlock male (arm)",
+  "end_b": "Hose shank",
+  "materials": "316, Aluminium, Brass, Plastic",
+  "sizes": "—",
+  "standards": "AA59326, EN 14420-7",
+  "codes": 79
+ },
+ {
+  "slug": "camlock-type-f-male-adapter-outside-thread",
+  "name": "Camlock Type F male adapter, outside thread",
+  "end_a": "Camlock male (arm)",
+  "end_b": "BSPP male thread",
+  "materials": "316, Aluminium, Brass, Plastic",
+  "sizes": "—",
+  "standards": "AA59326",
+  "codes": 94
+ },
+ {
+  "slug": "camlock-type-sa-spool-adapter",
+  "name": "Camlock Type SA spool adapter",
+  "end_a": "Camlock male",
+  "end_b": "Camlock male",
+  "materials": "Aluminium",
+  "sizes": "—",
+  "standards": "—",
+  "codes": 0
+ },
+ {
+  "slug": "camlock-type-sw-welding-adapters-coupler-spud-sets",
+  "name": "Camlock socket-weld adapters and spud sets",
+  "end_a": "Camlock",
+  "end_b": "Socket weld",
+  "materials": "316",
+  "sizes": "—",
+  "standards": "—",
+  "codes": 0
+ },
+ {
+  "slug": "camlock-cg-heavy-duty-for-snowblasting-pn-60",
+  "name": "Camlock heavy duty, snow blasting PN 60",
+  "end_a": "Camlock female",
+  "end_b": "Inside thread",
+  "materials": "316",
+  "sizes": "—",
+  "standards": "—",
+  "codes": 0
+ },
+ {
+  "slug": "camlock-cg-coupler-with-locking-security-smelok",
+  "name": "Camlock SMELOK locking coupler",
+  "end_a": "Camlock female (locking)",
+  "end_b": "Inside thread",
+  "materials": "316",
+  "sizes": "—",
+  "standards": "—",
+  "codes": 0
+ },
+ {
+  "slug": "camlock-reductions-cg",
+  "name": "Camlock reducing nipples",
+  "end_a": "Camlock male",
+  "end_b": "Camlock male, smaller",
+  "materials": "Aluminium",
+  "sizes": "—",
+  "standards": "—",
+  "codes": 0
+ },
+ {
+  "slug": "camlock-cg-visual-coupler-with-sight-glass",
+  "name": "Camlock visual coupler with sight glass",
+  "end_a": "Camlock female",
+  "end_b": "Inside thread + sight glass",
+  "materials": "316",
+  "sizes": "—",
+  "standards": "—",
+  "codes": 0
+ },
+ {
+  "slug": "camlock-cg-male-adapter-round-din-flange",
+  "name": "Camlock male adapter, DIN round flange",
+  "end_a": "Camlock male",
+  "end_b": "DIN round flange",
+  "materials": "316",
+  "sizes": "—",
+  "standards": "—",
+  "codes": 0
+ },
+ {
+  "slug": "camlock-cg-female-coupler-round-din-flange",
+  "name": "Camlock female coupler, DIN round flange",
+  "end_a": "Camlock female",
+  "end_b": "DIN round flange",
+  "materials": "316",
+  "sizes": "—",
+  "standards": "—",
+  "codes": 0
+ },
+ {
+  "slug": "camlock-cg-blasting-with-drilling-holes",
+  "name": "Camlock blasting coupler, drilled",
+  "end_a": "Camlock female",
+  "end_b": "Hose shank",
+  "materials": "Aluminium",
+  "sizes": "—",
+  "standards": "—",
+  "codes": 0
+ },
+ {
+  "slug": "camlock-spare-parts-arm-pin-chain",
+  "name": "Camlock arms, pins and safety chains",
+  "end_a": "Spare part",
+  "end_b": "Camlock",
+  "materials": "Stainless steel",
+  "sizes": "—",
+  "standards": "—",
+  "codes": 0
+ },
+ {
+  "slug": "camlock-spare-parts-gaskets-seals",
+  "name": "Camlock gaskets and thread seals",
+  "end_a": "Spare part",
+  "end_b": "Camlock",
+  "materials": "NBR, EPDM, FPM, CSM, PTFE",
+  "sizes": "—",
+  "standards": "—",
+  "codes": 0
+ }
+]
