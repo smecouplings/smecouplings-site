@@ -1,0 +1,8 @@
+﻿# SME Couplings — smecouplings.com
+# 建站期：站内页面均带 noindex，此处仅放行抓取，便于我们自查
+
+User-agent: *
+Allow: /
+
+# 上线后取消注释，并补上 sitemap 地址
+# Sitemap: https://smecouplings.com/sitemap.xml
