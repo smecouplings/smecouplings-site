@@ -1,4 +1,4 @@
-/* 产品页交互（收藏/比较/打印）+ 表格筛选 + 编号索引 + 枢纽页切换 */
+﻿/* 产品页交互（收藏/比较/打印）+ 表格筛选 + 编号索引 + 枢纽页切换 */
 (function () {
   "use strict";
 
@@ -32,11 +32,48 @@
     };
 
     if (bSave) bSave.addEventListener("click", function () { write(LS_SAVE, toggle(read(LS_SAVE), slug)); sync(); });
-    if (bCmp) bCmp.addEventListener("click", function () { write(LS_CMP, toggle(read(LS_CMP), slug, 4)); sync(); });
+    if (bCmp) bCmp.addEventListener("click", function () {
+      var list = read(LS_CMP);
+      var sys = actions.getAttribute("data-system") || "cam-and-groove";
+      var stored = localStorage.getItem("sme_compare_system");
+      if (list.length && stored && stored !== sys) {
+        if (!confirm("Compare works within one system. Clear the current selection and start a new one?")) return;
+        list = [];
+      }
+      list = toggle(list, slug, 4);
+      write(LS_CMP, list);
+      localStorage.setItem("sme_compare_system", list.length ? sys : "");
+      sync();
+    });
     if (bPrint) bPrint.addEventListener("click", function () { window.print(); });
     sync();
   }
 
+
+  /* ---------- 产品图：按材质切换 ---------- */
+  var gallery = document.querySelector(".gallery[data-materials]");
+  if (gallery) {
+    var ph = gallery.querySelector(".gallery-ph");
+    var mats = Array.prototype.slice.call(gallery.querySelectorAll(".mat"));
+    var setMat = function (mat) {
+      mats.forEach(function (b) { b.classList.toggle("is-on", b.getAttribute("data-mat") === mat); });
+      if (ph) ph.textContent = mat + " photo — being added";
+      var img = gallery.querySelector("img[data-mat-img]");
+      if (img) {
+        var src = img.getAttribute("data-src-" + mat.toLowerCase());
+        if (src) img.src = src;
+      }
+    };
+    mats.forEach(function (b) {
+      b.addEventListener("click", function () { setMat(b.getAttribute("data-mat")); });
+    });
+    var matSelect = document.querySelector('[data-filter="material"]');
+    if (matSelect) {
+      matSelect.addEventListener("change", function () {
+        if (matSelect.value) setMat(matSelect.value);
+      });
+    }
+  }
   /* ---------- 产品页：按属性筛选订货表 ---------- */
   var table = document.getElementById("codeTable");
   if (table) {
