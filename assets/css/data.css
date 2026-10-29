@@ -208,3 +208,9 @@ table.data tr.is-hidden { display: none; }
   border: 1px solid var(--line); background: #fff; color: var(--steel);
 }
 .cross-links span.soon { color: #a9b8c6; }
+
+/* 实物图 */
+.gallery-main img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.gallery-main { background: #fff; border-style: solid; border-color: var(--line); }
+.gallery-thumbs span { border-style: solid; border-color: var(--line); padding: .2rem; }
+.gallery-thumbs img { width: 100%; height: 100%; object-fit: contain; }
