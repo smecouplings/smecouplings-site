@@ -181,3 +181,13 @@ table.data tr.is-hidden { display: none; }
   body { font-size: 11pt; }
   .prose h2 { page-break-after: avoid; }
 }
+
+/* ---------- 登录闸门 ---------- */
+.gate {
+  border: 1px solid var(--line); border-left: 3px solid var(--amber);
+  background: linear-gradient(180deg,#fff,#fdfbf8);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 1.3rem 1.4rem; margin-top: 1.4rem;
+}
+.gate strong { display: block; font-size: 1rem; color: var(--navy); margin-bottom: .4rem; }
+.gate p { font-size: .9rem; color: var(--muted); margin-bottom: .9rem; max-width: 62ch; }
