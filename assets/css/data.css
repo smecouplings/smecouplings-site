@@ -296,13 +296,18 @@ tr.group-row:hover .thumb img { opacity: 1; }
 .fld-label { font-size: .78rem; color: var(--muted); font-weight: 600; }
 .picker { position: relative; }
 .picker-btn {
-  font: inherit; font-size: .9rem; min-width: 150px; text-align: left;
+  font: inherit; font-size: .9rem; min-width: 130px; text-align: left;
   display: flex; align-items: center; justify-content: space-between; gap: .6rem;
   padding: .45rem .6rem; background: #fff; color: var(--ink);
   border: 1px solid #cfd9e4; border-radius: 6px; cursor: pointer;
+  line-height: normal;
 }
 .picker-btn:hover { border-color: var(--steel); }
-.picker-btn .caret { color: var(--muted); font-size: .7rem; }
+.picker-btn::after {
+  content: ""; flex: none; width: 6px; height: 6px; margin-right: 2px;
+  border-right: 1.6px solid #6b8299; border-bottom: 1.6px solid #6b8299;
+  transform: rotate(45deg) translateY(-1px);
+}
 .picker-list {
   position: absolute; z-index: 40; top: calc(100% + 4px); left: 0;
   min-width: 100%; margin: 0; padding: .3rem; list-style: none;
@@ -316,3 +321,8 @@ tr.group-row:hover .thumb img { opacity: 1; }
 }
 .picker-list button:hover { background: var(--bg); }
 .picker-list .swatch { width: 10px; height: 10px; }
+
+/* 筛选条内的统一组件 */
+.filters .fld { gap: .25rem; }
+.filters .picker-btn { width: 100%; }
+.filters .picker-list { min-width: 160px; max-height: 320px; overflow-y: auto; }

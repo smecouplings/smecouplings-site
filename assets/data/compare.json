@@ -5,7 +5,7 @@
   "end_a": "Camlock male (arm)",
   "end_b": "BSPP female thread",
   "materials": "316, Aluminium, Brass, Plastic",
-  "sizes": "1/2–8",
+  "sizes": "1\"–3/4",
   "standards": "AA59326, EN 14420-7",
   "codes": 78
  },
@@ -15,7 +15,7 @@
   "end_a": "Camlock female (coupler)",
   "end_b": "BSPP male thread",
   "materials": "316, Aluminium, Brass, Plastic",
-  "sizes": "1/2–6",
+  "sizes": "1/2–3/4",
   "standards": "AA59326",
   "codes": 101
  },
@@ -25,7 +25,7 @@
   "end_a": "Camlock",
   "end_b": "Butt weld",
   "materials": "316",
-  "sizes": "1/2–6",
+  "sizes": "1/2–3/4",
   "standards": "—",
   "codes": 22
  },
@@ -35,7 +35,7 @@
   "end_a": "Camlock female (coupler)",
   "end_b": "Hose shank",
   "materials": "316, Aluminium, Brass, Plastic",
-  "sizes": "1/2–8",
+  "sizes": "1/2–3/4",
   "standards": "AA59326, EN 14420-7",
   "codes": 99
  },
@@ -45,7 +45,7 @@
   "end_a": "Blind plug",
   "end_b": "Camlock male (arm)",
   "materials": "316, Aluminium, Brass, Plastic",
-  "sizes": "1/2–8",
+  "sizes": "1/2–3/4",
   "standards": "AA59326",
   "codes": 85
  },
@@ -55,7 +55,7 @@
   "end_a": "Camlock female (coupler)",
   "end_b": "BSPP female thread",
   "materials": "316, Aluminium, Brass, Plastic",
-  "sizes": "1/2–8",
+  "sizes": "1/2–3/4",
   "standards": "AA59326, EN 14420-7",
   "codes": 91
  },
@@ -65,7 +65,7 @@
   "end_a": "Blind cap",
   "end_b": "Camlock female (coupler)",
   "materials": "316, Aluminium, Brass, Plastic",
-  "sizes": "2–8",
+  "sizes": "1/2–3/4",
   "standards": "AA59326",
   "codes": 99
  },
@@ -75,7 +75,7 @@
   "end_a": "Camlock female (coupler)",
   "end_b": "Camlock male (arm), smaller size",
   "materials": "Aluminium",
-  "sizes": "1½–6",
+  "sizes": "—",
   "standards": "—",
   "codes": 26
  },
@@ -85,7 +85,7 @@
   "end_a": "Camlock female (coupler)",
   "end_b": "Camlock female (coupler)",
   "materials": "Aluminium",
-  "sizes": "3–3",
+  "sizes": "—",
   "standards": "—",
   "codes": 2
  },
@@ -95,7 +95,7 @@
   "end_a": "Camlock male (arm)",
   "end_b": "Hose shank",
   "materials": "316, Aluminium, Brass, Plastic",
-  "sizes": "1/2–8",
+  "sizes": "1/2–3/4",
   "standards": "AA59326, EN 14420-7",
   "codes": 79
  },
@@ -105,7 +105,7 @@
   "end_a": "Camlock male (arm)",
   "end_b": "BSPP male thread",
   "materials": "316, Aluminium, Brass, Plastic",
-  "sizes": "1/2–8",
+  "sizes": "1/2–3/4",
   "standards": "AA59326",
   "codes": 94
  },
@@ -115,7 +115,7 @@
   "end_a": "Camlock male",
   "end_b": "Camlock male",
   "materials": "Aluminium",
-  "sizes": "1–6",
+  "sizes": "—",
   "standards": "—",
   "codes": 24
  },
@@ -125,7 +125,7 @@
   "end_a": "Camlock",
   "end_b": "Socket weld",
   "materials": "316",
-  "sizes": "2–2½",
+  "sizes": "—",
   "standards": "—",
   "codes": 4
  },
@@ -135,7 +135,7 @@
   "end_a": "Camlock female",
   "end_b": "Inside thread",
   "materials": "316",
-  "sizes": "3/4–2½",
+  "sizes": "3/4–3/4",
   "standards": "—",
   "codes": 21
  },
@@ -145,7 +145,7 @@
   "end_a": "Camlock female (locking)",
   "end_b": "Inside thread",
   "materials": "316",
-  "sizes": "3/4–4",
+  "sizes": "3/4–3/4",
   "standards": "—",
   "codes": 32
  },
@@ -155,7 +155,7 @@
   "end_a": "Camlock male",
   "end_b": "Camlock male, smaller",
   "materials": "Aluminium",
-  "sizes": "1½–2",
+  "sizes": "—",
   "standards": "—",
   "codes": 47
  },
@@ -175,7 +175,7 @@
   "end_a": "Camlock male",
   "end_b": "DIN round flange",
   "materials": "316",
-  "sizes": "85–8",
+  "sizes": "—",
   "standards": "—",
   "codes": 9
  },
@@ -185,7 +185,7 @@
   "end_a": "Camlock female",
   "end_b": "DIN round flange",
   "materials": "316",
-  "sizes": "85–8",
+  "sizes": "—",
   "standards": "—",
   "codes": 9
  },
@@ -195,7 +195,7 @@
   "end_a": "Camlock female",
   "end_b": "Hose shank",
   "materials": "Aluminium",
-  "sizes": "1½–3",
+  "sizes": "—",
   "standards": "—",
   "codes": 12
  },
