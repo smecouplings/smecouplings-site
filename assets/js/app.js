@@ -554,14 +554,14 @@
         var key = card.getAttribute("data-sys");
         var info = data[key] || {};
         if (info.live) {
-          var isG = key !== "cam-and-groove";
-          var gGrid = isG
-            ? document.getElementById(key === "guillemin" ? "itemGridGuillemin" : "itemGridDin")
-            : null;
+          var names = { guillemin: "Guillemin", din: "Din", sanitary: "Sanitary" };
+          var suffix = names[key];
+          var gGrid = suffix ? document.getElementById("itemGrid" + suffix) : null;
+          ["Guillemin", "Din", "Sanitary"].forEach(function (n) {
+            var el = document.getElementById("itemGrid" + n);
+            if (el) el.hidden = (n !== suffix);
+          });
           if (gGrid) {
-            document.getElementById("itemGridGuillemin").hidden = key !== "guillemin";
-            var dg = document.getElementById("itemGridDin");
-            if (dg) dg.hidden = key !== "din";
             gGrid.hidden = false;
             grid.hidden = true;
           } else {
