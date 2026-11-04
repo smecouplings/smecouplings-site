@@ -220,8 +220,8 @@
   "codes": 0
  },
  {
-  "slug": "guillemin-hose-coupler-nfe29-572",
-  "name": "Guillemin hose coupler NFE29-572",
+  "slug": "guillemin-hose-coupler",
+  "name": "Guillemin hose coupler",
   "end_a": "Guillemin (coupler)",
   "end_b": "Hose shank",
   "materials": "Brass, PP, Aluminium, 316",
@@ -230,10 +230,10 @@
   "codes": 67
  },
  {
-  "slug": "guillemin-en14420-8",
-  "name": "Guillemin EN14420-8",
-  "end_a": "Guillemin",
-  "end_b": "Guillemin",
+  "slug": "guillemin-coupling-din-safety-collar",
+  "name": "Guillemin coupling, DIN safety collar",
+  "end_a": "Guillemin (coupler)",
+  "end_b": "Hose shank",
   "materials": "Aluminium, 316, Brass",
   "sizes": "1–4",
   "standards": "NFE29-572",
@@ -270,8 +270,8 @@
   "codes": 45
  },
  {
-  "slug": "guillemin-by-inside-thread-nfe29-572",
-  "name": "Guillemin by inside thread NFE29-572",
+  "slug": "guillemin-by-inside-thread",
+  "name": "Guillemin by inside thread",
   "end_a": "Guillemin",
   "end_b": "BSPP female thread",
   "materials": "316, Aluminium, Brass, PP",
@@ -310,8 +310,8 @@
   "codes": 14
  },
  {
-  "slug": "guillemin-by-outside-thread-nfe29-572",
-  "name": "Guillemin by outside thread NFE29-572",
+  "slug": "guillemin-by-outside-thread",
+  "name": "Guillemin by outside thread",
   "end_a": "Guillemin",
   "end_b": "BSPP male thread",
   "materials": "316, Aluminium, Brass, PP",

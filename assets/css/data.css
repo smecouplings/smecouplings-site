@@ -793,3 +793,38 @@ table.data td.code .code-mask { font-weight: 700; }
   transition: transform .18s ease;
 }
 .range-cta:hover .range-arrow { transform: translateX(5px); }
+
+/* ---------- 幽灵卡加宽 + 底部上指提示 ---------- */
+.choose-card--wide { grid-column: span 2; }
+@media (max-width: 780px) { .choose-card--wide { grid-column: span 1; } }
+
+.range-reminder {
+  margin-top: 1.8rem;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 1.5rem; flex-wrap: wrap; position: relative;
+  border: 1px dashed #cfcfcf; border-radius: var(--radius);
+  background: transparent; padding: 1.2rem 1.5rem;
+}
+.range-reminder h3 { margin: 0 0 .25rem; font-size: 1rem; color: var(--ink); }
+.range-reminder p { margin: 0; font-size: .88rem; color: var(--muted); max-width: 60ch; }
+/* 向上箭头，指向幽灵卡 */
+.range-up {
+  flex: none; width: 34px; height: 34px; position: relative;
+  animation: upnudge 1.9s ease-in-out infinite;
+}
+.range-up::before, .range-up::after {
+  content: ""; position: absolute; left: 50%; transform: translateX(-50%);
+}
+.range-up::before {
+  width: 2px; height: 22px; background: var(--amber); bottom: 0;
+}
+.range-up::after {
+  width: 10px; height: 10px; border-left: 2px solid var(--amber);
+  border-top: 2px solid var(--amber); transform: translateX(-50%) rotate(45deg);
+  top: 2px;
+}
+@keyframes upnudge {
+  0%, 100% { transform: translateY(0); opacity: .5; }
+  50% { transform: translateY(-6px); opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) { .range-up { animation: none; } }
