@@ -277,16 +277,20 @@
     el.addEventListener("mouseleave", hidePop);
   });
 
-  /* ---------- 表格：页面级吸顶表头 ---------- */
+  /* ---------- 表格：筛选栏 + 表头一起吸顶 ---------- */
   (function () {
     var wrap = document.querySelector(".table-wrap");
     if (!wrap) return;
     var table = wrap.querySelector("table.data");
-    if (!table) return;
-    var thead = table.querySelector("thead");
-    if (!thead) return;
+    var thead = table && table.querySelector("thead");
+    if (!table || !thead) return;
 
     var NAV = 68;
+    var filters = document.querySelector(".filters");
+    var home = filters && filters.parentNode;
+    var next = filters && filters.nextSibling;
+
+    /* 吸顶容器：上面放真实筛选栏，下面放克隆表头 */
     var bar = document.createElement("div");
     bar.className = "sticky-head";
     var inner = document.createElement("div");
@@ -299,16 +303,46 @@
     document.body.appendChild(bar);
     bar.style.display = "none";
 
+    /* 占位块：筛选栏被移走时撑住原位置，避免页面跳动 */
+    var spacer = document.createElement("div");
+    spacer.style.display = "none";
+
+    var attached = false;
+
+    function attach() {
+      if (!filters || attached) return;
+      spacer.style.height = filters.offsetHeight + "px";
+      spacer.style.display = "block";
+      home.insertBefore(spacer, next);
+      bar.insertBefore(filters, inner);
+      filters.classList.add("in-bar");
+      attached = true;
+    }
+
+    function detach() {
+      if (!filters || !attached) return;
+      filters.classList.remove("in-bar");
+      home.insertBefore(filters, next);
+      if (spacer.parentNode) spacer.parentNode.removeChild(spacer);
+      spacer.style.display = "none";
+      attached = false;
+    }
+
     function sync() {
       var r = wrap.getBoundingClientRect();
       var h = thead.offsetHeight;
-      var show = r.top < NAV && r.bottom > NAV + h + 4;
-      if (!show) { bar.style.display = "none"; return; }
+      var show = r.top < NAV && r.bottom > NAV + h + 40;
+      if (!show) {
+        bar.style.display = "none";
+        detach();
+        return;
+      }
       bar.style.display = "block";
       bar.style.left = r.left + "px";
       bar.style.width = wrap.clientWidth + "px";
       clone.style.width = table.offsetWidth + "px";
       inner.style.transform = "translateX(" + (-wrap.scrollLeft) + "px)";
+      attach();
     }
 
     window.addEventListener("scroll", sync, { passive: true });

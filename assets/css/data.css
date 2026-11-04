@@ -461,3 +461,13 @@ table.data tr.group-row td:last-child { position: static; box-shadow: none; }
 /* 表头与编号索引里的色块同样处理 */
 .mat-tag { display: inline-flex; align-items: center; gap: .35rem; line-height: 1; }
 .mat-tag .swatch { display: block; margin: 0; align-self: center; }
+
+/* ---------- 吸顶条内的筛选栏 ---------- */
+.sticky-head { background: #fff; }
+.sticky-head .filters {
+  margin: 0; border-radius: 0; border-left: 0; border-right: 0; border-top: 0;
+  padding: .55rem .2rem;
+}
+.sticky-head .filters .fld-label { display: none; }
+.sticky-head .filters .fld { gap: 0; }
+.sticky-head .filters .count { margin-left: auto; }
