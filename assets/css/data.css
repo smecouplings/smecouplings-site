@@ -104,8 +104,10 @@ table.data tr.is-hidden { display: none; }
 .choose-card span { font-size: .84rem; color: var(--muted); line-height: 1.5; }
 .choose-card::after {
   content: "View sizes and codes →"; display: block; margin-top: .7rem;
-  font-size: .78rem; color: var(--steel); font-weight: 600;
+  font-size: .78rem; color: #7a7a7a; font-weight: 600;
+  transition: color .15s ease;
 }
+.choose-card:hover::after { color: var(--amber); }
 
 .searchbox { display: flex; gap: .6rem; margin-top: 1.6rem; max-width: 620px; }
 .searchbox input {
@@ -738,3 +740,10 @@ table.data td.code .code-mask { font-weight: 700; }
 }
 .preview-band__name { font-size: 1.15rem; font-weight: 700; letter-spacing: -.01em; }
 .preview-band__meta { font-size: .82rem; color: rgba(255, 255, 255, .62); letter-spacing: .04em; }
+
+/* ---------- 次级动作：不抢主按钮 ---------- */
+.btn--quiet {
+  background: transparent; color: var(--ink);
+  border: 1px solid var(--line); font-weight: 600;
+}
+.btn--quiet:hover { border-color: #c4c4c4; background: #fff; color: var(--ink); }
