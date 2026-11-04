@@ -411,6 +411,7 @@
     window.addEventListener("resize", sync);
     wrap.addEventListener("scroll", sync, { passive: true });
     sync();
+
   })();
 
 })();
