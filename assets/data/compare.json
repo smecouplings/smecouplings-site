@@ -220,7 +220,7 @@
   "codes": 0
  },
  {
-  "slug": "guillemin-guillemin-hose-coupler-nfe29-572",
+  "slug": "guillemin-hose-coupler-nfe29-572",
   "name": "Guillemin hose coupler NFE29-572",
   "end_a": "Guillemin (coupler)",
   "end_b": "Hose shank",
@@ -230,7 +230,7 @@
   "codes": 67
  },
  {
-  "slug": "guillemin-guillemin-en14420-8",
+  "slug": "guillemin-en14420-8",
   "name": "Guillemin EN14420-8",
   "end_a": "Guillemin",
   "end_b": "Guillemin",
@@ -240,7 +240,7 @@
   "codes": 21
  },
  {
-  "slug": "guillemin-guillemin-crimping-ferrule",
+  "slug": "guillemin-crimping-ferrule",
   "name": "Guillemin crimping ferrule",
   "end_a": "Ferrule",
   "end_b": "Hose shank",
@@ -260,7 +260,7 @@
   "codes": 24
  },
  {
-  "slug": "guillemin-guillemin-composite-hose-assembly",
+  "slug": "guillemin-composite-hose-assembly",
   "name": "Guillemin composite hose assembly",
   "end_a": "Assembly",
   "end_b": "Guillemin",
@@ -270,7 +270,7 @@
   "codes": 45
  },
  {
-  "slug": "guillemin-guillemin-by-inside-thread-nfe29-572",
+  "slug": "guillemin-by-inside-thread-nfe29-572",
   "name": "Guillemin by inside thread NFE29-572",
   "end_a": "Guillemin",
   "end_b": "BSPP female thread",
@@ -280,7 +280,7 @@
   "codes": 31
  },
  {
-  "slug": "guillemin-guillemin-thread-adapter-w-o-lock-ring",
+  "slug": "guillemin-thread-adapter-without-lock-ring",
   "name": "Guillemin thread adapter w/o lock-ring",
   "end_a": "Guillemin (adapter)",
   "end_b": "BSPP thread",
@@ -290,7 +290,7 @@
   "codes": 34
  },
  {
-  "slug": "guillemin-guillemin-without-lock-ring",
+  "slug": "guillemin-without-lock-ring",
   "name": "Guillemin without lock-ring",
   "end_a": "Guillemin",
   "end_b": "Guillemin",
@@ -300,7 +300,7 @@
   "codes": 16
  },
  {
-  "slug": "guillemin-guillemin-jawless-adapter",
+  "slug": "guillemin-jawless-adapter",
   "name": "Guillemin jawless adapter",
   "end_a": "Guillemin (adapter)",
   "end_b": "Guillemin",
@@ -310,7 +310,7 @@
   "codes": 14
  },
  {
-  "slug": "guillemin-guillemin-by-outside-thread-nfe29-572",
+  "slug": "guillemin-by-outside-thread-nfe29-572",
   "name": "Guillemin by outside thread NFE29-572",
   "end_a": "Guillemin",
   "end_b": "BSPP male thread",
@@ -320,7 +320,7 @@
   "codes": 32
  },
  {
-  "slug": "guillemin-guillemin-blind-end-locking-plug",
+  "slug": "guillemin-blind-end-locking-plug",
   "name": "Guillemin blind end, locking plug",
   "end_a": "Blind cap",
   "end_b": "Blind",
@@ -330,7 +330,7 @@
   "codes": 54
  },
  {
-  "slug": "guillemin-guillemin-coupler-for-welding-connection-bw",
+  "slug": "guillemin-coupler-for-welding-connection-bw",
   "name": "Guillemin coupler for welding connection, BW",
   "end_a": "Guillemin (coupler)",
   "end_b": "Butt weld",
@@ -340,7 +340,7 @@
   "codes": 10
  },
  {
-  "slug": "guillemin-guillemin-spool-reducer",
+  "slug": "guillemin-spool-reducer",
   "name": "Guillemin spool reducer",
   "end_a": "Guillemin",
   "end_b": "Guillemin",
@@ -350,7 +350,7 @@
   "codes": 3
  },
  {
-  "slug": "guillemin-guillemin-coupler-for-welding-connection-sw",
+  "slug": "guillemin-coupler-for-welding-connection-sw",
   "name": "Guillemin coupler for welding connection, SW",
   "end_a": "Guillemin (coupler)",
   "end_b": "Socket weld",
