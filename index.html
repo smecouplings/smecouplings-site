@@ -31,8 +31,9 @@
     <div class="wrap">
       <p class="eyebrow">Selection</p>
       <h1>Start from what has to connect.</h1>
-      <p class="lede">Three steps: pick the coupling system, pick the item, then read the size and order
-        code off its table. If you already have a code, type it below.</p>
+      <p class="lede">Three steps: <strong>01</strong> pick the coupling system, <strong>02</strong>
+        pick the item, <strong>03</strong> read the size and order code off its table. If you already
+        have a code, type it below.</p>
       <div class="searchbox">
         <input id="codeSearch" type="search" placeholder="Have an order code? e.g. 061052.6" aria-label="Search order code">
         <button class="btn btn--primary" id="codeGo" type="button">Find</button>
@@ -43,12 +44,17 @@
     </div>
   </section>
 
-  <section class="section">
+  <section class="section step" id="step1">
     <div class="wrap">
-      <p class="eyebrow">Step 1 — the system</p>
-      <h2>Which family of coupling?</h2>
-      <p class="lede">Each system has its own standard, sizes and mating parts. Pick the family first,
-        then the specific item inside it.</p>
+      <div class="step-head">
+        <span class="step-no">01</span>
+        <div>
+          <p class="eyebrow">The system</p>
+          <h2>Which family of coupling?</h2>
+          <p class="lede">Each system has its own standard, sizes and mating parts. Pick the family
+            first, then the specific item inside it.</p>
+        </div>
+      </div>
       <div class="systems"><a class="system-card" href="systems/cam-and-groove/">
               <span class="tag">System</span>
               <strong>Cam &amp; Groove</strong>
@@ -80,15 +86,23 @@
               <p>Safety clamps, ferrules and worm-drive.</p>
               <span class="system-count">coming</span>
             </div></div>
+      <div class="step-next"><span>Then choose the item</span></div>
     </div>
   </section>
 
-  <section class="section section--alt">
+  <div class="joint" aria-hidden="true"><span class="joint-tenon"></span></div>
+
+  <section class="section section--alt step" id="step2">
     <div class="wrap">
-      <p class="eyebrow">Step 2 — the item</p>
-      <h2>Cam &amp; Groove: which connection?</h2>
-      <p class="lede">Six types cover almost every camlock job. Each page lists materials, sizes and
-        order codes, and shows what the other end connects to.</p>
+      <div class="step-head">
+        <span class="step-no">02</span>
+        <div>
+          <p class="eyebrow">The item</p>
+          <h2>Cam &amp; Groove: which connection?</h2>
+          <p class="lede">Six types cover almost every camlock job. Each page lists materials, sizes
+            and order codes, and shows what the other end connects to.</p>
+        </div>
+      </div>
       <div class="chooser" style="margin-top:1.8rem"><a class="choose-card" href="products/camlock-type-a-male-adapter-inside-thread/">
           <strong>Type A</strong>
           <span>Camlock male (arm) → BSPP female thread</span>
@@ -108,13 +122,21 @@
           <strong>Type F</strong>
           <span>Camlock male (arm) → BSPP male thread</span>
         </a></div>
+      <div class="step-next"><span>Then read the size and code</span></div>
     </div>
   </section>
 
-  <section class="section">
+  <div class="joint joint--alt" aria-hidden="true"><span class="joint-tenon"></span></div>
+
+  <section class="section step" id="step3">
     <div class="wrap">
-      <p class="eyebrow">Other routes</p>
-      <h2>Skip the steps</h2>
+      <div class="step-head">
+        <span class="step-no">03</span>
+        <div>
+          <p class="eyebrow">Or skip ahead</p>
+          <h2>Go straight to what you know</h2>
+        </div>
+      </div>
       <div class="grid grid--3" style="margin-top:1.8rem">
         <a class="card card-link" href="codes/">
           <span class="tag">Lookup</span><h3>Order code index</h3>
