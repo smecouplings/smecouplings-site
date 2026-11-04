@@ -931,3 +931,16 @@ table.data td.code .code-mask { font-weight: 700; }
   display: block; font-size: .68rem; letter-spacing: .1em; text-transform: uppercase;
   color: var(--muted); margin-bottom: .2rem;
 }
+
+/* ---------- 光学对齐：框内文字略缩进 ---------- */
+/* 边框是硬直线，文字的左侧字面留白会让它看起来偏左，缩进 2px 后视觉齐平 */
+.preview-band { padding-left: calc(1.2rem + 2px); }
+.range-reminder { padding-left: calc(1.6rem + 2px); }
+.addr-card { padding-left: calc(1.2rem + 2px); }
+.aside-card { padding-left: calc(1.25rem + 2px); }
+.company-block { padding-left: calc(1.3rem + 2px); }
+
+/* 区块文字与框线做同样的 2px 光学缩进 */
+.section .eyebrow,
+.section .lede,
+.section .hint { padding-left: 2px; }
