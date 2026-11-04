@@ -705,7 +705,7 @@ table.data td.code .code-mask { font-weight: 700; }
 .range-cta .btn { flex: none; }
 
 /* ---------- 首页收尾过渡带 ---------- */
-.bridge { background: var(--bg); border-top: 1px solid var(--line); padding: 1.6rem 0; }
+.bridge { background: var(--bg); border-top: 1px solid var(--line); padding: 2.4rem 0; }
 .bridge-inner {
   display: flex; align-items: center; justify-content: space-between;
   gap: 1.6rem; flex-wrap: wrap;
@@ -716,7 +716,7 @@ table.data td.code .code-mask { font-weight: 700; }
 @media (max-width: 700px) { .bridge-actions { width: 100%; } .bridge-actions .btn { flex: 1; justify-content: center; } }
 
 /* 最后一段收紧，避免和过渡带之间空太多 */
-#items.section { padding-bottom: 2.2rem; }
+#items.section { padding-bottom: 4.2rem; }
 
 /* ---------- 系统预览横幅 ---------- */
 .preview-head { margin: 0 0 1.6rem; }
