@@ -290,3 +290,29 @@ tr.group-row:hover .thumb img { opacity: 1; }
   box-shadow: 0 14px 36px rgba(14, 28, 43, .18); pointer-events: none;
 }
 #imgPop img { display: block; width: 228px; height: auto; }
+
+/* ---------- 自定义下拉 ---------- */
+.fld { display: flex; flex-direction: column; gap: .25rem; }
+.fld-label { font-size: .78rem; color: var(--muted); font-weight: 600; }
+.picker { position: relative; }
+.picker-btn {
+  font: inherit; font-size: .9rem; min-width: 150px; text-align: left;
+  display: flex; align-items: center; justify-content: space-between; gap: .6rem;
+  padding: .45rem .6rem; background: #fff; color: var(--ink);
+  border: 1px solid #cfd9e4; border-radius: 6px; cursor: pointer;
+}
+.picker-btn:hover { border-color: var(--steel); }
+.picker-btn .caret { color: var(--muted); font-size: .7rem; }
+.picker-list {
+  position: absolute; z-index: 40; top: calc(100% + 4px); left: 0;
+  min-width: 100%; margin: 0; padding: .3rem; list-style: none;
+  background: #fff; border: 1px solid var(--line); border-radius: 8px;
+  box-shadow: 0 12px 28px rgba(14, 28, 43, .14);
+}
+.picker-list button {
+  font: inherit; font-size: .88rem; width: 100%; text-align: left;
+  padding: .42rem .55rem; border: 0; background: none; border-radius: 6px;
+  cursor: pointer; color: var(--ink); white-space: nowrap;
+}
+.picker-list button:hover { background: var(--bg); }
+.picker-list .swatch { width: 10px; height: 10px; }

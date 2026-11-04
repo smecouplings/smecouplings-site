@@ -81,6 +81,41 @@
     }
   }
 
+
+  /* ---------- 自定义下拉（材质） ---------- */
+  (function () {
+    var pickers = Array.prototype.slice.call(document.querySelectorAll("[data-picker]"));
+    if (!pickers.length) return;
+    function closeAll(except) {
+      pickers.forEach(function (p) {
+        if (p !== except) {
+          var l = p.querySelector(".picker-list");
+          if (l) l.hidden = true;
+        }
+      });
+    }
+    pickers.forEach(function (p) {
+      var input = p.querySelector("input[data-filter]");
+      var btn = p.querySelector(".picker-btn");
+      var label = p.querySelector("[data-label]");
+      var list = p.querySelector(".picker-list");
+      btn.addEventListener("click", function (e) {
+        e.stopPropagation();
+        closeAll(p);
+        list.hidden = !list.hidden;
+      });
+      list.addEventListener("click", function (e) {
+        var b = e.target.closest("button[data-val]");
+        if (!b) return;
+        input.value = b.getAttribute("data-val");
+        label.innerHTML = b.innerHTML;
+        list.hidden = true;
+        input.dispatchEvent(new Event("change", { bubbles: true }));
+      });
+    });
+    document.addEventListener("click", function () { closeAll(null); });
+  })();
+
   /* ---------- 3. 订货表筛选 ---------- */
   var table = document.getElementById("codeTable");
   if (table) {
