@@ -544,3 +544,7 @@ table.data td.code .code-mask { font-weight: 700; }
 }
 .sticky-group .mat-tag { font-weight: 700; }
 .sticky-group .swatch { width: 10px; height: 10px; }
+
+/* ---------- 已保存清单 ---------- */
+#savedRoot.items { margin-top: 0; }
+#savedRoot .item strong { font-size: 1rem; }

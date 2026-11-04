@@ -414,4 +414,59 @@
 
   })();
 
+
+  /* ---------- 已保存清单 ---------- */
+  (function () {
+    var root = document.getElementById("savedRoot");
+    var badge = document.querySelector('.site-nav a[href$="saved/"]');
+
+    var picks = read(LS_SAVE);
+    if (badge && picks.length) badge.textContent = "Saved (" + picks.length + ")";
+
+    if (!root) return;
+
+    var clear = document.getElementById("clearSaved");
+    if (clear) {
+      clear.addEventListener("click", function () {
+        if (!confirm("Clear all saved items?")) return;
+        write(LS_SAVE, []);
+        location.reload();
+      });
+    }
+
+    if (!picks.length) {
+      root.innerHTML = '<p style="color:#5b6b7c">Nothing saved yet. Open a product and press ' +
+        '“☆ Save”.</p>';
+      var mail0 = document.getElementById("mailSaved");
+      if (mail0) mail0.style.display = "none";
+      return;
+    }
+
+    fetch("../assets/data/compare.json").then(function (r) { return r.json(); }).then(function (all) {
+      var items = picks.map(function (s) {
+        return all.filter(function (x) { return x.slug === s; })[0];
+      }).filter(Boolean);
+
+      root.className = "items";
+      root.innerHTML = items.map(function (it) {
+        return '<a class="item" href="../products/' + it.slug + '/">' +
+          "<strong>" + it.name + "</strong>" +
+          "<span>" + (it.end_a || "") + " → " + (it.end_b || "") + "</span>" +
+          '<span class="codes">' + (it.codes || 0) + " order codes</span></a>";
+      }).join("");
+
+      var mail = document.getElementById("mailSaved");
+      if (mail) {
+        var body = items.map(function (it) {
+          return "- " + it.name + " (" + it.slug + ")";
+        }).join("\n");
+        mail.href = "mailto:contact@smecouplings.com?subject=" +
+          encodeURIComponent("Quotation request — saved items") +
+          "&body=" + encodeURIComponent("Please quote the following:\n\n" + body + "\n");
+      }
+    }).catch(function () {
+      root.innerHTML = '<p style="padding:1rem">Saved list could not be loaded.</p>';
+    });
+  })();
+
 })();
