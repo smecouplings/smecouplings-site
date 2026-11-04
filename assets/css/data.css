@@ -900,3 +900,11 @@ table.data td.code .code-mask { font-weight: 700; }
 }
 .addr-card h3 { margin: 0 0 .5rem; font-size: .78rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
 .addr-card p { margin: 0; font-size: .95rem; line-height: 1.6; color: var(--ink); }
+
+/* ---------- 联系页两栏 ---------- */
+.contact-wrap { display: grid; grid-template-columns: minmax(0,1fr) 320px; gap: 2.6rem; align-items: start; }
+.contact-wrap .addr-grid { grid-template-columns: repeat(2, 1fr); }
+@media (max-width: 940px) {
+  .contact-wrap { grid-template-columns: 1fr; gap: 1.8rem; }
+  .contact-wrap .addr-grid { grid-template-columns: 1fr; }
+}
