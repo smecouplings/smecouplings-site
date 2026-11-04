@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>SME Couplings — camlock couplings, selection and order codes</title>
-<meta name="description" content="Camlock type A to F, dust caps and plugs, reducing adapters. Select by connection end, size, material and order code.">
+<title>SME Couplings — hose couplings, selection and order codes</title>
+<meta name="description" content="Pick the coupling system, then the item: camlock, Guillemin, Storz and more. Sizes, materials and order codes.">
 <meta name="robots" content="noindex, nofollow">
 <link rel="icon" href="assets/img/favicon.ico" sizes="any">
 <link rel="stylesheet" href="assets/css/site.css">
@@ -31,8 +31,8 @@
     <div class="wrap">
       <p class="eyebrow">Selection</p>
       <h1>Start from what has to connect.</h1>
-      <p class="lede">Every coupling in the catalogue has two ends. Pick the end that meets your existing
-        connection, then the end that takes the hose or pipe — the part number follows from there.</p>
+      <p class="lede">Three steps: pick the coupling system, pick the item, then read the size and order
+        code off its table. If you already have a code, type it below.</p>
       <div class="searchbox">
         <input id="codeSearch" type="search" placeholder="Have an order code? e.g. 061052.6" aria-label="Search order code">
         <button class="btn btn--primary" id="codeGo" type="button">Find</button>
@@ -45,9 +45,49 @@
 
   <section class="section">
     <div class="wrap">
-      <p class="eyebrow">Step 1 — the coupling end</p>
-      <h2>Which camlock connection do you need?</h2>
-      <p class="lede">Six types cover almost every camlock job. Each page lists the materials, sizes and
+      <p class="eyebrow">Step 1 — the system</p>
+      <h2>Which family of coupling?</h2>
+      <p class="lede">Each system has its own standard, sizes and mating parts. Pick the family first,
+        then the specific item inside it.</p>
+      <div class="systems"><a class="system-card" href="systems/cam-and-groove/">
+              <span class="tag">System</span>
+              <strong>Cam &amp; Groove</strong>
+              <p>The everyday quick coupling: type A to F, caps, plugs, adapters.</p>
+              <span class="system-count">22 items</span>
+            </a><div class="system-card system-card--soon">
+              <span class="tag">System</span>
+              <strong>Guillemin</strong>
+              <p>French symmetric couplings, NF E29-572.</p>
+              <span class="system-count">coming</span>
+            </div><div class="system-card system-card--soon">
+              <span class="tag">System</span>
+              <strong>Storz</strong>
+              <p>Fire and water fittings, DIN 14300 series.</p>
+              <span class="system-count">coming</span>
+            </div><div class="system-card system-card--soon">
+              <span class="tag">System</span>
+              <strong>Sanitary</strong>
+              <p>Tri-clover, DIN 11851, SMS, RJT.</p>
+              <span class="system-count">coming</span>
+            </div><div class="system-card system-card--soon">
+              <span class="tag">System</span>
+              <strong>Dry-break</strong>
+              <p>DTD and DMG bottom-loading couplers.</p>
+              <span class="system-count">coming</span>
+            </div><div class="system-card system-card--soon">
+              <span class="tag">System</span>
+              <strong>Hose clamps</strong>
+              <p>Safety clamps, ferrules and worm-drive.</p>
+              <span class="system-count">coming</span>
+            </div></div>
+    </div>
+  </section>
+
+  <section class="section section--alt">
+    <div class="wrap">
+      <p class="eyebrow">Step 2 — the item</p>
+      <h2>Cam &amp; Groove: which connection?</h2>
+      <p class="lede">Six types cover almost every camlock job. Each page lists materials, sizes and
         order codes, and shows what the other end connects to.</p>
       <div class="chooser" style="margin-top:1.8rem"><a class="choose-card" href="products/camlock-type-a-male-adapter-inside-thread/">
           <strong>Type A</strong>
@@ -71,20 +111,20 @@
     </div>
   </section>
 
-  <section class="section section--alt">
+  <section class="section">
     <div class="wrap">
-      <p class="eyebrow">Step 2 — the other end</p>
-      <h2>Thread, hose or flange</h2>
+      <p class="eyebrow">Other routes</p>
+      <h2>Skip the steps</h2>
       <div class="grid grid--3" style="margin-top:1.8rem">
-        <a class="card card-link" href="systems/cam-and-groove/">
-          <span class="tag">System</span><h3>Cam &amp; Groove</h3>
-          <p>All 22 camlock items in one place, with a type-by-type comparison table.</p></a>
-        <a class="card card-link" href="connections/flange-end/">
-          <span class="tag">Connection</span><h3>Flange end</h3>
-          <p>Couplings that land on a DIN, ANSI or truck flange instead of a thread.</p></a>
         <a class="card card-link" href="codes/">
           <span class="tag">Lookup</span><h3>Order code index</h3>
-          <p>Every code in the camlock range, searchable, each linked to its product page.</p></a>
+          <p>Every code in the range, searchable, each linked to its product page.</p></a>
+        <a class="card card-link" href="connections/flange-end/">
+          <span class="tag">Cross-system</span><h3>Flange end</h3>
+          <p>Couplings that land on a DIN, ANSI or truck flange instead of a thread.</p></a>
+        <a class="card card-link" href="saved/">
+          <span class="tag">Shortlist</span><h3>Saved items</h3>
+          <p>Keep a list while you browse, then print it or send it as one enquiry.</p></a>
       </div>
     </div>
   </section>
@@ -119,10 +159,31 @@
     </div>
     <div class="footer-bottom">
       <span>© 2026 SME Couplings. All rights reserved.</span>
-      <span>smecouplings.com</span>
+      <span>
+        <a href="cookies/">Cookies &amp; privacy</a>
+        <span style="opacity:.4;margin:0 .4rem">·</span>
+        <a href="#" id="cookieSettings">Cookie settings</a>
+        <span style="opacity:.4;margin:0 .4rem">·</span>
+        smecouplings.com
+      </span>
     </div>
   </div>
 </footer>
+<div class="cookie-bar" id="cookieBar" hidden>
+  <div class="cookie-inner">
+    <div class="cookie-text">
+      <strong>Cookies and local storage</strong>
+      <p>We use strictly necessary storage to keep this site working, and — with your consent —
+        local storage for your shortlist. No advertising or third-party tracking cookies are set.
+        See <a href="cookies/">Cookies &amp; privacy</a>.</p>
+    </div>
+    <div class="cookie-actions">
+      <button type="button" class="btn btn--line" data-cookie="necessary">Necessary only</button>
+      <button type="button" class="btn btn--primary" data-cookie="all">Accept all</button>
+    </div>
+  </div>
+</div>
+
 <script src="assets/js/site.js"></script>
 <script src="assets/js/app.js"></script>
 </body>

@@ -40,7 +40,16 @@
       if (bCmp) { bCmp.textContent = cmp ? "⇄ In compare" : "⇄ Compare"; bCmp.classList.toggle("is-on", cmp); }
     };
 
-    if (bSave) bSave.addEventListener("click", function () { write(LS_SAVE, toggle(read(LS_SAVE), slug)); syncActions(); });
+    if (bSave) bSave.addEventListener("click", function () {
+      if (window.smeConsented && !window.smeConsented()) {
+        var barEl = document.getElementById("cookieBar");
+        if (barEl) barEl.hidden = false;
+        alert("Please choose “Accept all” in the cookie banner to keep a shortlist.");
+        return;
+      }
+      write(LS_SAVE, toggle(read(LS_SAVE), slug));
+      syncActions();
+    });
     if (bCmp) {
       bCmp.addEventListener("click", function () {
         var list = read(LS_CMP);
@@ -470,6 +479,45 @@
     }).catch(function () {
       root.innerHTML = '<p style="padding:1rem">Saved list could not be loaded.</p>';
     });
+  })();
+
+
+  /* ---------- Cookie 同意 ---------- */
+  (function () {
+    var KEY = "sme_cookie_consent";
+    var bar = document.getElementById("cookieBar");
+    var openers = [document.getElementById("cookieSettings"),
+                   document.getElementById("cookieSettingsInline")];
+
+    function readConsent() {
+      try { return JSON.parse(localStorage.getItem(KEY) || "null"); } catch (e) { return null; }
+    }
+    function save(choice) {
+      write(KEY, { v: 1, choice: choice, ts: new Date().toISOString() });
+      if (bar) bar.hidden = true;
+      document.documentElement.setAttribute("data-consent", choice);
+    }
+    function show() { if (bar) bar.hidden = false; }
+
+    var consent = readConsent();
+    if (!consent) show(); else document.documentElement.setAttribute("data-consent", consent.choice);
+
+    if (bar) {
+      bar.addEventListener("click", function (e) {
+        var b = e.target.closest("[data-cookie]");
+        if (!b) return;
+        save(b.getAttribute("data-cookie"));
+      });
+    }
+    openers.forEach(function (a) {
+      if (a) a.addEventListener("click", function (e) { e.preventDefault(); show(); });
+    });
+
+    /* 只有选择 "all" 时才允许保存清单 */
+    window.smeConsented = function () {
+      var c = readConsent();
+      return !!c && c.choice === "all";
+    };
   })();
 
 })();
