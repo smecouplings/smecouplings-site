@@ -653,4 +653,29 @@
     });
   })();
 
+
+  /* ---------- 复制询价模板 ---------- */
+  (function () {
+    var btn = document.getElementById(copyTpl);
+    var pre = document.getElementById(tplText);
+    if (!btn || !pre) return;
+    btn.addEventListener(click, function () {
+      var text = pre.textContent;
+      var done = function () {
+        var old = btn.textContent;
+        btn.textContent = Copied;
+        setTimeout(function () { btn.textContent = old; }, 1600);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, function () {
+          var r = document.createRange(); r.selectNodeContents(pre);
+          var sel = getSelection(); sel.removeAllRanges(); sel.addRange(r);
+        });
+      } else {
+        var r = document.createRange(); r.selectNodeContents(pre);
+        var sel = getSelection(); sel.removeAllRanges(); sel.addRange(r);
+      }
+    });
+  })();
+
 })();
