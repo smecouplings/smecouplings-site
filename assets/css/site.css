@@ -289,3 +289,6 @@ p { margin: 0 0 1em; }
   color: #fff; opacity: .13; pointer-events: none;
 }
 @media (max-width: 1000px) { .hero-mark { display: none; } }
+
+/* hidden 属性要压住 display:grid / flex 的组件样式 */
+[hidden] { display: none !important; }

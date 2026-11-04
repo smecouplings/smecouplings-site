@@ -550,15 +550,33 @@
         var key = card.getAttribute("data-sys");
         var info = data[key] || {};
         if (info.live) {
-          grid.innerHTML = gridHTML;
-          grid.hidden = false;
+          var isG = key === "guillemin";
+          var gGrid = document.getElementById("itemGridGuillemin");
+          if (gGrid) {
+            gGrid.hidden = !isG;
+            grid.hidden = isG;
+          } else {
+            grid.innerHTML = gridHTML;
+            grid.hidden = false;
+          }
           soon.hidden = true;
-          if (cta) cta.hidden = false;
-          if (eyebrow) eyebrow.textContent = defaults.eyebrow;
-          if (title) title.textContent = defaults.title;
-          if (lede) lede.innerHTML = defaults.lede;
+          if (cta) {
+            cta.hidden = false;
+            cta.href = isG ? "systems/guillemin/" : "systems/cam-and-groove/";
+          }
+          if (eyebrow) eyebrow.textContent = isG ? "Guillemin · preview" : defaults.eyebrow;
+          if (title) title.textContent = isG ? "Which fitting does the job?" : defaults.title;
+          if (lede) {
+            lede.innerHTML = isG
+              ? "Six of the eighteen symmetric-coupling items — couplers, adapters, blind ends and ferrules. The rest sit in the full listing."
+              : defaults.lede;
+          }
           if (bandName) bandName.textContent = info.name || "Cam & Groove";
-          if (bandMeta) bandMeta.textContent = "22 items · AA59326 / EN 14420-7";
+          if (bandMeta) {
+            bandMeta.textContent = isG
+              ? "18 items · NF E29-572 / EN 14420-8"
+              : "22 items · AA59326 / EN 14420-7";
+          }
           return;
         }
         grid.hidden = true;
