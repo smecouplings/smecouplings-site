@@ -659,3 +659,24 @@ table.data td.code .code-mask { font-weight: 700; }
   box-shadow: 0 4px 10px rgba(196, 0, 0, .25);
 }
 
+
+/* ---------- 首页：并行入口 ---------- */
+.ways { display: grid; grid-template-columns: 2fr 1fr; gap: 2.4rem; margin-top: 2rem; align-items: start; }
+.way-group h3 {
+  font-size: .78rem; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--muted); margin: 0 0 .8rem; font-weight: 650;
+}
+.way-group .systems { margin-top: 0; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); }
+.way-group--narrow { display: flex; flex-direction: column; }
+.way-card {
+  display: block; border: 1px solid var(--line); border-left: 3px solid var(--amber);
+  border-radius: 0 var(--radius) var(--radius) 0; background: #fff;
+  padding: .9rem 1rem; margin-bottom: .6rem; color: inherit;
+  transition: border-color .15s ease, box-shadow .15s ease;
+}
+.way-card:hover {
+  color: inherit; box-shadow: var(--shadow); border-color: #c4c4c4; border-left-color: var(--amber);
+}
+.way-card strong { display: block; font-size: .95rem; margin-bottom: .2rem; }
+.way-card span { font-size: .82rem; color: var(--muted); line-height: 1.5; }
+@media (max-width: 940px) { .ways { grid-template-columns: 1fr; gap: 1.6rem; } }

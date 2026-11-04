@@ -31,35 +31,30 @@
     <div class="wrap">
       <p class="eyebrow">Selection</p>
       <h1>Start from what has to connect.</h1>
-      <p class="lede">Three steps: <strong>01</strong> pick the coupling system, <strong>02</strong>
-        pick the item, <strong>03</strong> read the size and order code off its table. If you already
-        have a code, type it below.</p>
+      <p class="lede">Four ways in: by coupling system, by order code, by connection type, or from a
+        shortlist you keep while browsing. All of them end at the same place — a size and an order code.</p>
       <div class="searchbox">
         <input id="codeSearch" type="search" placeholder="Have an order code? e.g. 061052.6" aria-label="Search order code">
         <button class="btn btn--primary" id="codeGo" type="button">Find</button>
       </div>
-      <div class="hero-actions" style="margin-top:1.2rem">
-        <a class="btn btn--ghost" href="codes/">Browse all order codes</a>
-      </div>
     </div>
   </section>
 
-  <section class="section step" id="step1">
+  <section class="section" id="start">
     <div class="wrap">
-      <div class="step-head">
-        <span class="step-no">01</span>
-        <div>
-          <p class="eyebrow">The system</p>
-          <h2>Which family of coupling?</h2>
-          <p class="lede">Each system has its own standard, sizes and mating parts. Pick the family
-            first, then the specific item inside it.</p>
-        </div>
-      </div>
-      <div class="systems"><a class="system-card" href="systems/cam-and-groove/">
+      <p class="eyebrow">Ways in</p>
+      <h2>Pick a route — each one closes the others</h2>
+      <p class="lede">Which route suits you depends on what you already know: a system name, a part
+        number, a flange, or nothing yet.</p>
+
+      <div class="ways">
+        <div class="way-group">
+          <h3>By system</h3>
+          <div class="systems"><a class="system-card" href="#items">
               <span class="tag">System</span>
               <strong>Cam &amp; Groove</strong>
               <p>The everyday quick coupling: type A to F, caps, plugs, adapters.</p>
-              <span class="system-count">22 items</span>
+              <span class="system-count">22 items →</span>
             </a><div class="system-card system-card--soon">
               <span class="tag">System</span>
               <strong>Guillemin</strong>
@@ -86,23 +81,33 @@
               <p>Safety clamps, ferrules and worm-drive.</p>
               <span class="system-count">coming</span>
             </div></div>
-      <div class="step-next"><span>Then choose the item</span></div>
+        </div>
+
+        <div class="way-group way-group--narrow">
+          <h3>Or skip the system</h3>
+          <a class="way-card" href="codes/">
+            <strong>By order code</strong>
+            <span>Type a code you already have — it goes straight to its row.</span>
+          </a>
+          <a class="way-card" href="connections/flange-end/">
+            <strong>By connection</strong>
+            <span>Everything that ends in a flange, across all systems.</span>
+          </a>
+          <a class="way-card" href="saved/">
+            <strong>From your shortlist</strong>
+            <span>Return to the items you saved, print them or send one enquiry.</span>
+          </a>
+        </div>
+      </div>
     </div>
   </section>
 
-  <div class="joint" aria-hidden="true"><span class="joint-tenon"></span></div>
-
-  <section class="section section--alt step" id="step2">
+  <section class="section section--alt" id="items">
     <div class="wrap">
-      <div class="step-head">
-        <span class="step-no">02</span>
-        <div>
-          <p class="eyebrow">The item</p>
-          <h2>Cam &amp; Groove: which connection?</h2>
-          <p class="lede">Six types cover almost every camlock job. Each page lists materials, sizes
-            and order codes, and shows what the other end connects to.</p>
-        </div>
-      </div>
+      <p class="eyebrow">Cam &amp; Groove</p>
+      <h2>Which connection does the job?</h2>
+      <p class="lede">Six types cover almost every camlock job. Pick one for its sizes, materials and
+        order codes.</p>
       <div class="chooser" style="margin-top:1.8rem"><a class="choose-card" href="products/camlock-type-a-male-adapter-inside-thread/">
           <strong>Type A</strong>
           <span>Camlock male (arm) → BSPP female thread</span>
@@ -122,32 +127,9 @@
           <strong>Type F</strong>
           <span>Camlock male (arm) → BSPP male thread</span>
         </a></div>
-      <div class="step-next"><span>Then read the size and code</span></div>
-    </div>
-  </section>
-
-  <div class="joint joint--alt" aria-hidden="true"><span class="joint-tenon"></span></div>
-
-  <section class="section step" id="step3">
-    <div class="wrap">
-      <div class="step-head">
-        <span class="step-no">03</span>
-        <div>
-          <p class="eyebrow">Or skip ahead</p>
-          <h2>Go straight to what you know</h2>
-        </div>
-      </div>
-      <div class="grid grid--3" style="margin-top:1.8rem">
-        <a class="card card-link" href="codes/">
-          <span class="tag">Lookup</span><h3>Order code index</h3>
-          <p>Every code in the range, searchable, each linked to its product page.</p></a>
-        <a class="card card-link" href="connections/flange-end/">
-          <span class="tag">Cross-system</span><h3>Flange end</h3>
-          <p>Couplings that land on a DIN, ANSI or truck flange instead of a thread.</p></a>
-        <a class="card card-link" href="saved/">
-          <span class="tag">Shortlist</span><h3>Saved items</h3>
-          <p>Keep a list while you browse, then print it or send it as one enquiry.</p></a>
-      </div>
+      <p style="margin-top:1.8rem">
+        <a class="btn btn--line" href="systems/cam-and-groove/">Open the full Cam &amp; Groove range →</a>
+      </p>
     </div>
   </section>
 </main>
