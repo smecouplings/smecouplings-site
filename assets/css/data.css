@@ -438,3 +438,26 @@ table.data tr.group-row td:last-child { position: static; box-shadow: none; }
 }
 .sticky-head th:last-child { box-shadow: -8px 0 12px -6px rgba(14, 28, 43, .12); }
 @media print { .sticky-head { display: none !important; } }
+
+/* ---------- chip 内色块对齐 ---------- */
+.chip strong {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: .15rem .55rem;
+  vertical-align: middle;
+}
+.chip .mat-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  line-height: 1;
+}
+.chip .swatch {
+  display: block;
+  margin: 0;
+  align-self: center;
+}
+/* 表头与编号索引里的色块同样处理 */
+.mat-tag { display: inline-flex; align-items: center; gap: .35rem; line-height: 1; }
+.mat-tag .swatch { display: block; margin: 0; align-self: center; }
