@@ -554,11 +554,16 @@
         var key = card.getAttribute("data-sys");
         var info = data[key] || {};
         if (info.live) {
-          var isG = key === "guillemin";
-          var gGrid = document.getElementById("itemGridGuillemin");
+          var isG = key !== "cam-and-groove";
+          var gGrid = isG
+            ? document.getElementById(key === "guillemin" ? "itemGridGuillemin" : "itemGridDin")
+            : null;
           if (gGrid) {
-            gGrid.hidden = !isG;
-            grid.hidden = isG;
+            document.getElementById("itemGridGuillemin").hidden = key !== "guillemin";
+            var dg = document.getElementById("itemGridDin");
+            if (dg) dg.hidden = key !== "din";
+            gGrid.hidden = false;
+            grid.hidden = true;
           } else {
             grid.innerHTML = gridHTML;
             grid.hidden = false;
