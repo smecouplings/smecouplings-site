@@ -749,7 +749,7 @@ table.data td.code .code-mask { font-weight: 700; }
 .btn--quiet:hover { border-color: #c4c4c4; background: #fff; color: var(--ink); }
 
 /* ---------- 底部四选项 ---------- */
-.ways-end { background: var(--bg); border-top: 1px solid var(--line); padding: 4.8rem 0 5.2rem; }
+.ways-end { background: #fff; border-top: 1px solid var(--line); padding: 4.8rem 0 5.2rem; }
 .ways-end__title { font-size: 1.1rem; margin: .2rem 0 1.9rem; }
 .ways-end__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: .8rem; }
 .end-card {
