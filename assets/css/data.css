@@ -509,3 +509,20 @@ table.data .size-v { font-size: 1.12em; letter-spacing: .01em; }
 @media (max-width: 940px) { .aside-sticky { position: static; } }
 .table-full { margin-top: 2.8rem; }
 .table-full h2:first-child { margin-top: 0; }
+
+/* ---------- 订货编号的独立视觉 ---------- */
+table.data td.code,
+table.data .code-real {
+  font-family: ui-monospace, "Cascadia Mono", "SF Mono", Consolas, monospace;
+  font-weight: 700;
+  letter-spacing: .04em;
+  color: #1f1f1f;
+}
+table.data td.code {
+  background: linear-gradient(180deg, #fafafa, #f2f2f2);
+  box-shadow: inset 0 0 0 1px #e6e6e6;
+  border-radius: 5px;
+  padding: 3px 8px !important;
+  white-space: nowrap;
+}
+.codes-toolbar + .table-wrap td.code { background: none; box-shadow: none; }
