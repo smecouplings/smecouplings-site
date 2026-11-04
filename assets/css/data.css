@@ -503,3 +503,9 @@ table.data td.code { letter-spacing: .02em; }
 
 /* 尺寸里的分数符号略放大，避免视觉偏小 */
 table.data .size-v { font-size: 1.12em; letter-spacing: .01em; }
+
+/* 产品页：表格独占整行，侧栏吸顶 */
+.aside-sticky { position: sticky; top: 88px; align-self: start; }
+@media (max-width: 940px) { .aside-sticky { position: static; } }
+.table-full { margin-top: 2.8rem; }
+.table-full h2:first-child { margin-top: 0; }
