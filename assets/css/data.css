@@ -218,3 +218,17 @@ table.data tr.is-hidden { display: none; }
 .mat { display: inline-flex; align-items: center; gap: .4rem; padding: .25rem .6rem .25rem .25rem; }
 .mat img { width: 30px; height: 30px; object-fit: contain; border-radius: 4px; background: #f4f8fb; }
 .mat span { font-size: .76rem; }
+
+/* ---------- 订货表：材质分组 ---------- */
+table.data tr.group-row td {
+  background: #eaf1f8; padding: .45rem .8rem; cursor: pointer;
+  border-top: 1px solid #d7e2ec; border-bottom: 1px solid #d7e2ec;
+}
+table.data tr.group-row:hover td { background: #dfeaf5; }
+.group-cell { display: inline-flex; align-items: center; gap: .55rem; }
+.group-cell img { width: 30px; height: 30px; object-fit: contain; border-radius: 4px; background: #fff; }
+.group-cell strong { font-size: .9rem; color: var(--navy); }
+.group-cell em { font-style: normal; font-size: .75rem; color: var(--muted); }
+.group-hint { font-size: .72rem; color: var(--steel); opacity: 0; transition: opacity .15s ease; }
+table.data tr.group-row:hover .group-hint { opacity: 1; }
+tr.group-row.is-hidden { display: none; }

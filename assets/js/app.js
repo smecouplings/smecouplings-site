@@ -67,6 +67,7 @@
     mats.forEach(function (b) {
       b.addEventListener("click", function () { setMat(b.getAttribute("data-mat")); });
     });
+    window.smeSetMaterial = setMat;
     var matSelect = document.querySelector('[data-filter="material"]');
     if (matSelect) {
       matSelect.addEventListener("change", function () {
@@ -78,7 +79,18 @@
   var table = document.getElementById("codeTable");
   if (table) {
     var selects = Array.prototype.slice.call(document.querySelectorAll("[data-filter]"));
-    var rows = Array.prototype.slice.call(table.querySelectorAll("tbody tr"));
+    var rows = Array.prototype.slice.call(table.querySelectorAll("tbody tr:not(.group-row)"));
+    var groupRows = Array.prototype.slice.call(table.querySelectorAll("tr.group-row"));
+
+    var updateGroups = function () {
+      groupRows.forEach(function (g) {
+        var mat = g.getAttribute("data-group");
+        var any = rows.some(function (tr) {
+          return tr.getAttribute("data-material") === mat && !tr.classList.contains("is-hidden");
+        });
+        g.classList.toggle("is-hidden", !any);
+      });
+    };
     var counter = document.getElementById("rowCount");
     var apply = function () {
       var active = selects.map(function (s) { return [s.getAttribute("data-filter"), s.value]; })
@@ -90,8 +102,20 @@
         if (ok) shown++;
       });
       if (counter) counter.textContent = shown;
+      updateGroups();
     };
     selects.forEach(function (s) { s.addEventListener("change", apply); });
+
+    groupRows.forEach(function (g) {
+      g.addEventListener("click", function () {
+        var mat = g.getAttribute("data-group");
+        if (window.smeSetMaterial) window.smeSetMaterial(mat);
+        var sel = document.querySelector('[data-filter="material"]');
+        if (sel && sel.value !== mat) { sel.value = mat; apply(); }
+      });
+    });
+
+    updateGroups();
   }
 
   /* ---------- 编号索引：过滤 + 显示/隐藏 ---------- */
