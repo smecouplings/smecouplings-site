@@ -281,3 +281,11 @@ p { margin: 0 0 1em; }
 .site-nav a.btn--primary:hover,
 .site-nav a.btn--primary:focus { color: #fff; }
 .site-nav a.btn--primary:hover { background: #a80000; }
+
+/* ---------- 首屏线图 ---------- */
+.hero-mark {
+  position: absolute; right: 3%; top: 50%; transform: translateY(-50%);
+  width: min(46vw, 620px); height: auto;
+  color: #fff; opacity: .13; pointer-events: none;
+}
+@media (max-width: 1000px) { .hero-mark { display: none; } }
