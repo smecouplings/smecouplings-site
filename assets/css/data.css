@@ -476,3 +476,27 @@ table.data tr.group-row td:last-child { position: static; box-shadow: none; }
 .sticky-head-inner { overflow: hidden; }
 .sticky-head .filters { position: relative; z-index: 2; }
 .sticky-head .picker-list { z-index: 90; }
+
+/* ---------- 工程感表格字体 ---------- */
+table.data {
+  font-family: ui-monospace, "Cascadia Mono", "SF Mono", Consolas, "Liberation Mono", monospace;
+  font-size: .84rem;
+  letter-spacing: .01em;
+  font-variant-numeric: tabular-nums;
+}
+table.data th {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
+  font-size: .72rem;
+  letter-spacing: .08em;
+}
+table.data td.code { letter-spacing: .02em; }
+
+.sticky-head th { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif; }
+.sticky-group {
+  display: flex; align-items: center; gap: .45rem;
+  padding: .4rem .8rem;
+  background: #eaf1f8;
+  border-bottom: 1px solid #d7e2ec;
+  font-size: .82rem; color: var(--navy);
+}
+.sticky-group em { font-style: normal; color: var(--muted); font-size: .76rem; }

@@ -301,6 +301,13 @@
     clone.appendChild(thead.cloneNode(true));
     inner.appendChild(clone);
     bar.appendChild(inner);
+
+    var groupBar = document.createElement("div");
+    groupBar.className = "sticky-group";
+    groupBar.style.display = "none";
+    var groupText = document.createElement("span");
+    groupBar.appendChild(groupText);
+    bar.appendChild(groupBar);
     document.body.appendChild(bar);
     bar.style.display = "none";
 
@@ -335,6 +342,7 @@
       var show = r.top < NAV && r.bottom > NAV + h + 40;
       if (!show) {
         bar.style.display = "none";
+        groupBar.style.display = "none";
         detach();
         return;
       }
@@ -344,6 +352,25 @@
       clone.style.width = table.offsetWidth + "px";
       inner.style.transform = "translateX(" + (-wrap.scrollLeft) + "px)";
       attach();
+      showGroup();
+    }
+
+    /* 当前滚到哪个材料组 */
+    function showGroup() {
+      var rows = Array.prototype.slice.call(wrap.querySelectorAll("tr.group-row"));
+      if (!rows.length) { groupBar.style.display = "none"; return; }
+      var line = NAV + bar.offsetHeight - groupBar.offsetHeight;
+      var current = null;
+      rows.forEach(function (r) {
+        if (r.getBoundingClientRect().top <= line + 4) current = r;
+      });
+      if (!current) { groupBar.style.display = "none"; return; }
+      var name = current.getAttribute("data-group") || "";
+      var strong = current.querySelector(".group-cell strong");
+      groupBar.style.display = "block";
+      groupText.innerHTML = strong ? strong.innerHTML : name;
+      var em = current.querySelector(".group-cell em");
+      if (em) groupText.innerHTML += ' <em>' + em.textContent + "</em>";
     }
 
     window.addEventListener("scroll", sync, { passive: true });
