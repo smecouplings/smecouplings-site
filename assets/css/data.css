@@ -418,8 +418,8 @@ table.data tr.group-row td:last-child { position: static; box-shadow: none; }
 .sticky-head {
   position: fixed;
   top: 68px;
-  z-index: 60;
-  overflow: hidden;
+  z-index: 70;
+  overflow: visible;
   background: #f2f5f9;
   border-bottom: 1px solid var(--line);
   box-shadow: 0 6px 16px rgba(14, 28, 43, .10);
@@ -471,3 +471,8 @@ table.data tr.group-row td:last-child { position: static; box-shadow: none; }
 .sticky-head .filters .fld-label { display: none; }
 .sticky-head .filters .fld { gap: 0; }
 .sticky-head .filters .count { margin-left: auto; }
+
+/* ---------- 吸顶条层级 ---------- */
+.sticky-head-inner { overflow: hidden; }
+.sticky-head .filters { position: relative; z-index: 2; }
+.sticky-head .picker-list { z-index: 90; }

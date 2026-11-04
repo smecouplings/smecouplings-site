@@ -294,6 +294,7 @@
     var bar = document.createElement("div");
     bar.className = "sticky-head";
     var inner = document.createElement("div");
+    inner.className = "sticky-head-inner";
     inner.style.willChange = "transform";
     var clone = document.createElement("table");
     clone.style.width = "100%";
