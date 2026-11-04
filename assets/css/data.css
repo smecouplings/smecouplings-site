@@ -221,16 +221,13 @@ table.data tr.is-hidden { display: none; }
 
 /* ---------- 订货表：材质分组 ---------- */
 table.data tr.group-row td {
-  background: #eaf1f8; padding: .45rem .8rem; cursor: pointer;
+  background: #eef2f6; padding: .45rem .8rem;
   border-top: 1px solid #d7e2ec; border-bottom: 1px solid #d7e2ec;
 }
-table.data tr.group-row:hover td { background: #dfeaf5; }
 .group-cell { display: inline-flex; align-items: center; gap: .55rem; }
 .group-cell img { width: 30px; height: 30px; object-fit: contain; border-radius: 4px; background: #fff; }
 .group-cell strong { font-size: .9rem; color: var(--navy); }
 .group-cell em { font-style: normal; font-size: .75rem; color: var(--muted); }
-.group-hint { font-size: .72rem; color: var(--steel); opacity: 0; transition: opacity .15s ease; }
-table.data tr.group-row:hover .group-hint { opacity: 1; }
 tr.group-row.is-hidden { display: none; }
 
 /* ---------- 产品页：材质卡组（一排错位卡片） ---------- */
@@ -510,19 +507,17 @@ table.data td.num { letter-spacing: .02em; }
 .table-full { margin-top: 2.8rem; }
 .table-full h2:first-child { margin-top: 0; }
 
-/* ---------- 订货编号的独立视觉 ---------- */
-table.data td.code,
-table.data .code-real {
+/* ---------- 订货编号：靠字形区分，不做按钮外观 ---------- */
+table.data td.code {
   font-family: ui-monospace, "Cascadia Mono", "SF Mono", Consolas, monospace;
   font-weight: 700;
-  letter-spacing: .04em;
-  color: #1f1f1f;
-}
-table.data td.code {
-  background: linear-gradient(180deg, #fafafa, #f2f2f2);
-  box-shadow: inset 0 0 0 1px #e6e6e6;
-  border-radius: 5px;
-  padding: 3px 8px !important;
+  letter-spacing: .045em;
+  color: #1a1a1a;
   white-space: nowrap;
+  background: none;
+  box-shadow: none;
+  border-radius: 0;
+  padding: .55rem .8rem;
 }
-.codes-toolbar + .table-wrap td.code { background: none; box-shadow: none; }
+table.data td.code .code-real,
+table.data td.code .code-mask { font-weight: 700; }
