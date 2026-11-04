@@ -275,3 +275,9 @@ p { margin: 0 0 1em; }
 .brand-name { letter-spacing: -.01em; }
 .brand-name span { color: var(--muted); font-weight: 500; }
 .footer-brand img { border-radius: 50%; filter: none; opacity: 1; }
+
+/* 导航里的主按钮：文字必须保持白色（避免被 .site-nav a 覆盖） */
+.site-nav a.btn--primary,
+.site-nav a.btn--primary:hover,
+.site-nav a.btn--primary:focus { color: #fff; }
+.site-nav a.btn--primary:hover { background: #a80000; }
