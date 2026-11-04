@@ -502,7 +502,7 @@ table.data td.code { letter-spacing: .02em; }
 .sticky-group em { font-style: normal; color: var(--muted); font-size: .76rem; }
 
 /* 尺寸里的分数符号略放大，避免视觉偏小 */
-table.data .size-v { font-size: 1.12em; letter-spacing: .01em; }
+table.data td.num { letter-spacing: .02em; }
 
 /* 产品页：表格独占整行，侧栏吸顶 */
 .aside-sticky { position: sticky; top: 88px; align-self: start; }
