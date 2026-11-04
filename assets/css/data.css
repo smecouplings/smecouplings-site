@@ -715,3 +715,26 @@ table.data td.code .code-mask { font-weight: 700; }
 
 /* 最后一段收紧，避免和过渡带之间空太多 */
 #items.section { padding-bottom: 2.2rem; }
+
+/* ---------- 系统预览横幅 ---------- */
+.preview-head { margin: 0 0 1.6rem; }
+.preview-banner {
+  width: 100%; height: auto; border-radius: var(--radius);
+  border: 1px solid var(--line); background: #fff;
+}
+.soon-panel {
+  margin-top: 1.8rem; padding: 1.4rem 1.5rem;
+  border: 1px dashed #cfcfcf; border-radius: var(--radius); background: #fff;
+}
+.soon-panel p { margin: 0 0 .6rem; font-size: .9rem; color: var(--muted); }
+.soon-panel p strong { color: var(--ink); }
+
+/* ---------- 系统标题带 ---------- */
+.preview-band {
+  display: flex; align-items: baseline; gap: .9rem; flex-wrap: wrap;
+  padding: .9rem 1.2rem; margin-bottom: 1.6rem;
+  background: var(--navy); color: #fff; border-radius: var(--radius);
+  border-left: 4px solid var(--amber);
+}
+.preview-band__name { font-size: 1.15rem; font-weight: 700; letter-spacing: -.01em; }
+.preview-band__meta { font-size: .82rem; color: rgba(255, 255, 255, .62); letter-spacing: .04em; }

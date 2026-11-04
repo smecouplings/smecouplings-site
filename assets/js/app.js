@@ -520,4 +520,59 @@
     };
   })();
 
+
+  /* ---------- 首页：切换系统预览 ---------- */
+  (function () {
+    var dataEl = document.getElementById("sysData");
+    var grid = document.getElementById("itemGrid");
+    var soon = document.getElementById("soonPanel");
+    if (!dataEl || !grid || !soon) return;
+
+    var data = JSON.parse(dataEl.textContent);
+    var gridHTML = grid.innerHTML;
+    var ctaHTML = document.querySelector(".range-cta");
+    var bandName = document.getElementById("sysBandName");
+    var bandMeta = document.getElementById("sysBandMeta");
+    var eyebrow = document.getElementById("sysEyebrow");
+    var title = document.getElementById("sysTitle");
+    var lede = document.getElementById("sysLede");
+    var soonName = document.getElementById("soonName");
+    var cta = ctaHTML;
+
+    var defaults = {
+      eyebrow: eyebrow ? eyebrow.textContent : "",
+      title: title ? title.textContent : "",
+      lede: lede ? lede.innerHTML : ""
+    };
+
+    document.querySelectorAll(".system-card[data-sys]").forEach(function (card) {
+      card.addEventListener("click", function () {
+        var key = card.getAttribute("data-sys");
+        var info = data[key] || {};
+        if (info.live) {
+          grid.innerHTML = gridHTML;
+          grid.hidden = false;
+          soon.hidden = true;
+          if (cta) cta.hidden = false;
+          if (eyebrow) eyebrow.textContent = defaults.eyebrow;
+          if (title) title.textContent = defaults.title;
+          if (lede) lede.innerHTML = defaults.lede;
+          if (bandName) bandName.textContent = info.name || "Cam & Groove";
+          if (bandMeta) bandMeta.textContent = "22 items · AA59326 / EN 14420-7";
+          return;
+        }
+        grid.hidden = true;
+        soon.hidden = false;
+        if (cta) cta.hidden = true;
+        if (eyebrow) eyebrow.textContent = (info.name || key) + " · being added";
+        if (title) title.textContent = "Not digitised yet";
+        if (lede) lede.innerHTML = "This family exists in our catalogue but is not yet on the site. " +
+          "Ask us directly and we will quote from the printed data.";
+        if (soonName) soonName.textContent = info.name || key;
+        if (bandName) bandName.textContent = info.name || key;
+        if (bandMeta) bandMeta.textContent = "Not yet digitised";
+      });
+    });
+  })();
+
 })();

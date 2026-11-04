@@ -50,37 +50,37 @@
       <div class="ways">
         <div class="way-group">
           <h3>By system</h3>
-          <div class="systems"><a class="system-card" href="#items">
+          <div class="systems"><a class="system-card" href="#items" data-sys="cam-and-groove">
               <span class="tag">System</span>
               <strong>Cam &amp; Groove</strong>
               <p>The everyday quick coupling: type A to F, caps, plugs, adapters.</p>
               <span class="system-count">22 items →</span>
-            </a><div class="system-card system-card--soon">
+            </a><a class="system-card system-card--soon" href="#items" data-sys="guillemin">
               <span class="tag">System</span>
               <strong>Guillemin</strong>
               <p>French symmetric couplings, NF E29-572.</p>
               <span class="system-count">coming</span>
-            </div><div class="system-card system-card--soon">
+            </a><a class="system-card system-card--soon" href="#items" data-sys="storz">
               <span class="tag">System</span>
               <strong>Storz</strong>
               <p>Fire and water fittings, DIN 14300 series.</p>
               <span class="system-count">coming</span>
-            </div><div class="system-card system-card--soon">
+            </a><a class="system-card system-card--soon" href="#items" data-sys="sanitary">
               <span class="tag">System</span>
               <strong>Sanitary</strong>
               <p>Tri-clover, DIN 11851, SMS, RJT.</p>
               <span class="system-count">coming</span>
-            </div><div class="system-card system-card--soon">
+            </a><a class="system-card system-card--soon" href="#items" data-sys="dry-break">
               <span class="tag">System</span>
               <strong>Dry-break</strong>
               <p>DTD and DMG bottom-loading couplers.</p>
               <span class="system-count">coming</span>
-            </div><div class="system-card system-card--soon">
+            </a><a class="system-card system-card--soon" href="#items" data-sys="hose-clamps">
               <span class="tag">System</span>
               <strong>Hose clamps</strong>
               <p>Safety clamps, ferrules and worm-drive.</p>
               <span class="system-count">coming</span>
-            </div></div>
+            </a></div>
         </div>
 
         <div class="way-group way-group--narrow">
@@ -104,12 +104,16 @@
 
   <section class="section section--alt" id="items">
     <div class="wrap">
-      <p class="eyebrow">Cam &amp; Groove · preview</p>
-      <h2>Which connection does the job?</h2>
-      <p class="lede">These are the six connectors most jobs need — <strong>6 of the 22
-        items</strong> in the camlock range. The other 16 (dust caps, plugs, flange and
-        welding ends, reducers, spares) sit in the full listing.</p>
-      <div class="chooser" style="margin-top:1.8rem"><a class="choose-card" href="products/camlock-type-a-male-adapter-inside-thread/">
+      <div class="preview-band" id="sysBand">
+        <span class="preview-band__name" id="sysBandName">Cam &amp; Groove</span>
+        <span class="preview-band__meta" id="sysBandMeta">22 items · AA59326 / EN 14420-7</span>
+      </div>
+      <p class="eyebrow" id="sysEyebrow">Cam &amp; Groove · preview</p>
+      <h2 id="sysTitle">Which connection does the job?</h2>
+      <p class="lede" id="sysLede">These are the six connectors most jobs need — <strong>6 of the
+        22 items</strong> in the camlock range. The other 16 (dust caps, plugs,
+        flange and welding ends, reducers, spares) sit in the full listing.</p>
+      <div class="chooser" id="itemGrid" style="margin-top:1.8rem"><a class="choose-card" href="products/camlock-type-a-male-adapter-inside-thread/">
           <strong>Type A</strong>
           <span>Camlock male (arm) → BSPP female thread</span>
         </a><a class="choose-card" href="products/camlock-type-b-female-coupler-outside-thread/">
@@ -131,6 +135,12 @@
       <strong>+16 more items</strong>
       <span>Dust caps and plugs, DIN flange ends, welding ends, reducers and spares.</span>
     </a></div>
+      <div class="soon-panel" id="soonPanel" hidden>
+        <p><strong id="soonName">This system</strong> is being added to the site. The catalogue exists —
+          we just have not digitised it yet.</p>
+        <p>In the meantime we can quote from a photo or a drawing.</p>
+        <a class="btn btn--primary" href="mailto:contact@smecouplings.com?subject=Enquiry">Email an enquiry</a>
+      </div>
 
       <div class="range-cta">
         <div>
@@ -157,7 +167,7 @@
     </div>
   </section>
 </main>
-
+<script type="application/json" id="sysData">{"cam-and-groove": {"name": "Cam & Groove", "live": true}, "guillemin": {"name": "Guillemin", "live": false}, "storz": {"name": "Storz", "live": false}, "sanitary": {"name": "Sanitary", "live": false}, "dry-break": {"name": "Dry-break", "live": false}, "hose-clamps": {"name": "Hose clamps", "live": false}}</script>
 <footer class="site-footer">
   <div class="wrap">
     <div class="footer-grid">
