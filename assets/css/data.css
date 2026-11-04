@@ -944,3 +944,17 @@ table.data td.code .code-mask { font-weight: 700; }
 .section .eyebrow,
 .section .lede,
 .section .hint { padding-left: 2px; }
+
+/* ---------- 框内文字上下光学对齐 ---------- */
+/* 行高在文字上方留了半行，视觉上顶部显空、底部显挤，各挪 1px 找平 */
+.preview-band   { padding-block: calc(.9rem - 1px) calc(.9rem + 1px); }
+.range-reminder { padding-block: calc(1.35rem - 1px) calc(1.45rem + 1px); }
+.addr-card      { padding-block: calc(1.1rem - 1px) calc(1.1rem + 1px); }
+.aside-card     { padding-block: calc(1.2rem - 1px) calc(1.2rem + 1px); }
+.company-block  { padding-block: calc(1.1rem - 1px) calc(1.1rem + 1px); }
+.system-card    { padding-block: calc(1.1rem - 1px) calc(1.1rem + 1px); }
+.choose-card    { padding-block: calc(1.2rem - 1px) calc(1.2rem + 1px); }
+.end-card       { padding-block: calc(.95rem - 1px) calc(.95rem + 1px); }
+.way-card       { padding-block: calc(.9rem - 1px) calc(.9rem + 1px); }
+.soon-panel     { padding-block: calc(1.4rem - 1px) calc(1.4rem + 1px); }
+.tpl            { padding-block: calc(1rem - 1px) calc(1rem + 1px); }
