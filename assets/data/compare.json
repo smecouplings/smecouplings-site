@@ -220,28 +220,18 @@
   "codes": 0
  },
  {
-  "slug": "guillemin-brass-and-pp-guillemin-hose-coupler-nfe29-572",
-  "name": "Brass & PP Guillemin hose coupler NFE29-572",
+  "slug": "guillemin-guillemin-hose-coupler-nfe29-572",
+  "name": "Guillemin hose coupler NFE29-572",
   "end_a": "Guillemin (coupler)",
   "end_b": "Hose shank",
-  "materials": "Brass, PP",
-  "sizes": "3/4–4",
-  "standards": "NFE29-572",
-  "codes": 24
- },
- {
-  "slug": "guillemin-aluminum-and-316-guillemin-hose-coupler-nfe29-572",
-  "name": "Aluminum & 316 Guillemin hose coupler NFE29-572",
-  "end_a": "Guillemin (coupler)",
-  "end_b": "Hose shank",
-  "materials": "Aluminium, 316",
+  "materials": "Brass, PP, Aluminium, 316",
   "sizes": "3/4–6",
   "standards": "NFE29-572",
-  "codes": 43
+  "codes": 67
  },
  {
-  "slug": "guillemin-alum-316-and-brass-guillemin-en14420-8",
-  "name": "Alum, 316 & brass Guillemin EN14420-8",
+  "slug": "guillemin-guillemin-en14420-8",
+  "name": "Guillemin EN14420-8",
   "end_a": "Guillemin",
   "end_b": "Guillemin",
   "materials": "Aluminium, 316, Brass",
@@ -250,8 +240,8 @@
   "codes": 21
  },
  {
-  "slug": "guillemin-aluminum-crimping-ferrule",
-  "name": "Aluminum crimping ferrule",
+  "slug": "guillemin-guillemin-crimping-ferrule",
+  "name": "Guillemin crimping ferrule",
   "end_a": "Ferrule",
   "end_b": "Hose shank",
   "materials": "Aluminium, 316",
@@ -260,8 +250,8 @@
   "codes": 6
  },
  {
-  "slug": "guillemin-nbr-and-fpm-expansion-gasket-composite-hose-crimper",
-  "name": "NBR & FPM expansion gasket composite hose crimper",
+  "slug": "guillemin-expansion-gaskets-for-composite-hose-crimper",
+  "name": "Expansion gaskets for composite hose crimper",
   "end_a": "Guillemin",
   "end_b": "Guillemin",
   "materials": "316, Aluminium",
@@ -270,8 +260,8 @@
   "codes": 24
  },
  {
-  "slug": "guillemin-aluminum-brass-and-316-composite-assembly",
-  "name": "Aluminum, brass & 316 Composite assembly",
+  "slug": "guillemin-guillemin-composite-hose-assembly",
+  "name": "Guillemin composite hose assembly",
   "end_a": "Assembly",
   "end_b": "Guillemin",
   "materials": "Brass, 316, Aluminium, Carbon steel",
@@ -280,28 +270,18 @@
   "codes": 45
  },
  {
-  "slug": "guillemin-aluminum-and-316-guillemin-by-inside-thread-nfe29-572",
-  "name": "Aluminum & 316 Guillemin by inside thread NFE29-572",
+  "slug": "guillemin-guillemin-by-inside-thread-nfe29-572",
+  "name": "Guillemin by inside thread NFE29-572",
   "end_a": "Guillemin",
   "end_b": "BSPP female thread",
-  "materials": "316, Aluminium",
+  "materials": "316, Aluminium, Brass, PP",
   "sizes": "1/2–6",
   "standards": "NFE29-572",
-  "codes": 19
+  "codes": 31
  },
  {
-  "slug": "guillemin-brass-and-pp-guillemin-by-inside-thread-nfe29-572",
-  "name": "Brass & PP Guillemin by inside thread NFE29-572",
-  "end_a": "Guillemin",
-  "end_b": "BSPP female thread",
-  "materials": "Brass, PP",
-  "sizes": "3/4–4",
-  "standards": "NFE29-572",
-  "codes": 12
- },
- {
-  "slug": "guillemin-aluminum-and-316-guillemin-thread-adapter-w-o-lock-ring",
-  "name": "Aluminum & 316 Guillemin thread adapter w/o lock-ring",
+  "slug": "guillemin-guillemin-thread-adapter-w-o-lock-ring",
+  "name": "Guillemin thread adapter w/o lock-ring",
   "end_a": "Guillemin (adapter)",
   "end_b": "BSPP thread",
   "materials": "316, Aluminium",
@@ -310,8 +290,8 @@
   "codes": 34
  },
  {
-  "slug": "guillemin-brass-guillemin-without-lock-ring",
-  "name": "Brass Guillemin without lock-ring",
+  "slug": "guillemin-guillemin-without-lock-ring",
+  "name": "Guillemin without lock-ring",
   "end_a": "Guillemin",
   "end_b": "Guillemin",
   "materials": "Brass",
@@ -320,8 +300,8 @@
   "codes": 16
  },
  {
-  "slug": "guillemin-aluminum-and-316-guillemin-jawless-adapter",
-  "name": "Aluminum & 316 Guillemin jawless adapter",
+  "slug": "guillemin-guillemin-jawless-adapter",
+  "name": "Guillemin jawless adapter",
   "end_a": "Guillemin (adapter)",
   "end_b": "Guillemin",
   "materials": "Aluminium, 316",
@@ -330,48 +310,28 @@
   "codes": 14
  },
  {
-  "slug": "guillemin-aluminum-and-316-guillemin-by-outside-thread-nfe29-572",
-  "name": "Aluminum & 316 Guillemin by outside thread NFE29-572",
+  "slug": "guillemin-guillemin-by-outside-thread-nfe29-572",
+  "name": "Guillemin by outside thread NFE29-572",
   "end_a": "Guillemin",
   "end_b": "BSPP male thread",
-  "materials": "316, Aluminium",
+  "materials": "316, Aluminium, Brass, PP",
   "sizes": "1/2–6",
   "standards": "NFE29-572",
-  "codes": 20
+  "codes": 32
  },
  {
-  "slug": "guillemin-brass-and-pp-guillemin-by-outside-thread-nfe29-572",
-  "name": "Brass & PP Guillemin by outside thread NFE29-572",
-  "end_a": "Guillemin",
-  "end_b": "BSPP male thread",
-  "materials": "Brass, PP",
-  "sizes": "3/4–4",
-  "standards": "NFE29-572",
-  "codes": 12
- },
- {
-  "slug": "guillemin-aluminum-and-316-guillemin-blind-end-locking-plug",
-  "name": "Aluminum & 316 Guillemin blind end, locking plug",
+  "slug": "guillemin-guillemin-blind-end-locking-plug",
+  "name": "Guillemin blind end, locking plug",
   "end_a": "Blind cap",
   "end_b": "Blind",
-  "materials": "316, Aluminium, Brass",
+  "materials": "316, Aluminium, Brass, PP",
   "sizes": "1/2–6",
   "standards": "NFE29-572",
-  "codes": 28
+  "codes": 54
  },
  {
-  "slug": "guillemin-brass-and-pp-guillemin-blind-end-locking-plug",
-  "name": "Brass & PP Guillemin blind end, locking plug",
-  "end_a": "Blind cap",
-  "end_b": "Blind",
-  "materials": "Brass, PP, Aluminium, 316",
-  "sizes": "3/4–4",
-  "standards": "NFE29-572",
-  "codes": 26
- },
- {
-  "slug": "guillemin-316-guillemin-coupler-for-welding-connection-bw",
-  "name": "316 Guillemin coupler for welding connection, BW",
+  "slug": "guillemin-guillemin-coupler-for-welding-connection-bw",
+  "name": "Guillemin coupler for welding connection, BW",
   "end_a": "Guillemin (coupler)",
   "end_b": "Butt weld",
   "materials": "316",
@@ -380,8 +340,8 @@
   "codes": 10
  },
  {
-  "slug": "guillemin-aluminum-316-and-pp-spool-reducer-of-guillemin",
-  "name": "Aluminum, 316 & PP spool reducer of Guillemin",
+  "slug": "guillemin-guillemin-spool-reducer",
+  "name": "Guillemin spool reducer",
   "end_a": "Guillemin",
   "end_b": "Guillemin",
   "materials": "316",
@@ -390,8 +350,8 @@
   "codes": 3
  },
  {
-  "slug": "guillemin-316-guillemin-coupler-for-welding-connection-sw",
-  "name": "316 Guillemin coupler for welding connection, SW",
+  "slug": "guillemin-guillemin-coupler-for-welding-connection-sw",
+  "name": "Guillemin coupler for welding connection, SW",
   "end_a": "Guillemin (coupler)",
   "end_b": "Socket weld",
   "materials": "316",

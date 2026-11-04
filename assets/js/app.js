@@ -531,6 +531,8 @@
     var data = JSON.parse(dataEl.textContent);
     var gridHTML = grid.innerHTML;
     var ctaHTML = document.querySelector(".range-cta");
+    var rangeTitle = document.getElementById("rangeTitle");
+    var rangeMeta = document.getElementById("rangeMeta");
     var bandName = document.getElementById("sysBandName");
     var bandMeta = document.getElementById("sysBandMeta");
     var eyebrow = document.getElementById("sysEyebrow");
@@ -562,8 +564,10 @@
           soon.hidden = true;
           if (cta) {
             cta.hidden = false;
-            cta.href = isG ? "systems/guillemin/" : "systems/cam-and-groove/";
+            cta.href = info.cta || "systems/cam-and-groove/";
           }
+          if (rangeTitle) rangeTitle.textContent = info.ctaTitle || "The full range";
+          if (rangeMeta) rangeMeta.textContent = info.ctaMeta || "";
           if (eyebrow) eyebrow.textContent = isG ? "Guillemin · preview" : defaults.eyebrow;
           if (title) title.textContent = isG ? "Which fitting does the job?" : defaults.title;
           if (lede) {

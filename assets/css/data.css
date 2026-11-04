@@ -781,3 +781,15 @@ table.data td.code .code-mask { font-weight: 700; }
 }
 @media (max-width: 1000px) { .ways-end__grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 640px) { .ways-end__grid { grid-template-columns: 1fr; } }
+
+/* ---------- full 提示：整块可点的箭头框 ---------- */
+.range-cta {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 1.5rem; color: inherit; text-decoration: none;
+}
+.range-cta:hover { color: inherit; border-color: #c4c4c4; box-shadow: var(--shadow); }
+.range-cta .range-arrow {
+  flex: none; font-size: 1.5rem; line-height: 1; color: var(--amber);
+  transition: transform .18s ease;
+}
+.range-cta:hover .range-arrow { transform: translateX(5px); }
