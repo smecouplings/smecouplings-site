@@ -285,7 +285,7 @@ p { margin: 0 0 1em; }
 /* ---------- 首屏线图 ---------- */
 .hero-mark {
   position: absolute; right: 3%; top: 50%; transform: translateY(-50%);
-  width: min(46vw, 620px); height: auto;
+  width: min(33vw, 430px); height: auto;
   color: #fff; opacity: .13; pointer-events: none;
 }
 @media (max-width: 1000px) { .hero-mark { display: none; } }

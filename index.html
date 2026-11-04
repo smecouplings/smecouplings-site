@@ -27,39 +27,36 @@
 </header>
 <main>
   <section class="hero">
-    <svg class="hero-mark" viewBox="0 0 440 260" aria-hidden="true" fill="none"
-         stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
-      <!-- male adapter: thread -->
-      <path d="M20 100h16v60H20z"/>
-      <path d="M36 96h10v68H36z"/>
-      <path d="M46 92h12v76H46z"/>
-      <path d="M58 88h12v84H58z"/>
-      <!-- male adapter: body and groove -->
-      <path d="M70 88h76v84H70z"/>
-      <path d="M146 104h14v52h-14z"/>
-      <path d="M160 112h18v36h-18z"/>
-      <!-- coupling nose -->
-      <path d="M178 118h20v24h-20z"/>
-      <!-- female coupler: mouth -->
-      <path d="M198 108h18v44h-18z"/>
-      <path d="M216 96h22v68h-22z"/>
-      <!-- female coupler: body -->
-      <path d="M238 88h86v84h-86z"/>
-      <!-- cam arms -->
-      <path d="M252 74h52a8 8 0 0 1 8 8v6h-60z"/>
-      <path d="M252 186h52a8 8 0 0 0 8-8v-6h-60z"/>
-      <circle cx="262" cy="81" r="4"/>
-      <circle cx="262" cy="179" r="4"/>
-      <!-- hose tail -->
-      <path d="M324 104h18v52h-18z"/>
-      <path d="M342 112h16v36h-16z"/>
-      <path d="M358 120h14v20h-14z"/>
-      <!-- centre line -->
-      <path d="M8 130h424" stroke-dasharray="8 6" opacity=".7"/>
-      <!-- bore -->
-      <path d="M60 130h300" opacity=".5"/>
-      <!-- gasket -->
-      <path d="M182 124h10v12h-10z" stroke-dasharray="3 3"/>
+    <svg class="hero-mark" viewBox="0 0 600 600" aria-hidden="true" fill="none"
+         stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+      <!-- C 形环，呼应标识 -->
+      <path class="hero-c" d="M95 157 A250 250 0 1 1 95 443" stroke-width="58" opacity=".07"/>
+      <path class="hero-c-thin" d="M95 157 A250 250 0 1 1 95 443" stroke-width="1.2" opacity=".16"/>
+
+      <!-- 接头剖面 -->
+      <g transform="translate(80 170)" stroke-width="1.4" opacity=".15">
+        <path d="M20 100h16v60H20z"/>
+        <path d="M36 96h10v68H36z"/>
+        <path d="M46 92h12v76H46z"/>
+        <path d="M58 88h12v84H58z"/>
+        <path d="M70 88h76v84H70z"/>
+        <path d="M146 104h14v52h-14z"/>
+        <path d="M160 112h18v36h-18z"/>
+        <path d="M178 118h20v24h-20z"/>
+        <path d="M198 108h18v44h-18z"/>
+        <path d="M216 96h22v68h-22z"/>
+        <path d="M238 88h86v84h-86z"/>
+        <path d="M252 74h52a8 8 0 0 1 8 8v6h-60z"/>
+        <path d="M252 186h52a8 8 0 0 0 8-8v-6h-60z"/>
+        <circle cx="262" cy="81" r="4"/>
+        <circle cx="262" cy="179" r="4"/>
+        <path d="M324 104h18v52h-18z"/>
+        <path d="M342 112h16v36h-16z"/>
+        <path d="M358 120h14v20h-14z"/>
+        <path d="M8 130h424" stroke-dasharray="8 6" opacity=".7"/>
+        <path d="M60 130h300" opacity=".5"/>
+        <path d="M182 124h10v12h-10z" stroke-dasharray="3 3"/>
+      </g>
     </svg>
     <div class="wrap">
       <p class="eyebrow">Selection</p>
@@ -201,7 +198,7 @@
 
       <div class="range-reminder" id="rangeReminder">
         <span class="range-reminder__tail" aria-hidden="true"></span>
-        <h3 id="rangeTitle">See the rest</h3>
+        <h3 id="rangeTitle">Keep going</h3>
         <p class="range-reminder__nums">
           <span><strong id="restItems">16</strong> more items</span>
           <em>·</em>
@@ -238,7 +235,7 @@
     </div>
   </section>
 </main>
-<script type="application/json" id="sysData">{"cam-and-groove": {"name": "Cam & Groove", "live": true, "cta": "systems/cam-and-groove/", "ctaTitle": "See the rest", "restItems": 16, "restCodes": 392, "families": "Dust caps and plugs, DIN flange ends, welding ends, reducers and spares."}, "guillemin": {"name": "Guillemin", "live": true, "cta": "systems/guillemin/", "ctaTitle": "See the rest", "restItems": 8, "restCodes": 94, "families": "Adapters, blind ends, ferrules, spool reducers and spares."}, "storz": {"name": "Storz", "live": false}, "sanitary": {"name": "Sanitary", "live": false}, "dry-break": {"name": "Dry Break", "live": false}, "hose-clamps": {"name": "Hose Clamps", "live": false}}</script>
+<script type="application/json" id="sysData">{"cam-and-groove": {"name": "Cam & Groove", "live": true, "cta": "systems/cam-and-groove/", "ctaTitle": "Keep going", "restItems": 16, "restCodes": 392, "families": "Dust caps and plugs, DIN flange ends, welding ends, reducers and spares."}, "guillemin": {"name": "Guillemin", "live": true, "cta": "systems/guillemin/", "ctaTitle": "Keep going", "restItems": 8, "restCodes": 94, "families": "Adapters, blind ends, ferrules, spool reducers and spares."}, "storz": {"name": "Storz", "live": false}, "sanitary": {"name": "Sanitary", "live": false}, "dry-break": {"name": "Dry Break", "live": false}, "hose-clamps": {"name": "Hose Clamps", "live": false}}</script>
 <footer class="site-footer">
   <div class="wrap">
     <div class="footer-grid">
