@@ -637,8 +637,15 @@
         e.stopPropagation();
         set(!menu.classList.contains("is-open"));
       });
-      menu.addEventListener("mouseenter", function () { set(true); });
-      menu.addEventListener("mouseleave", function () { set(false); });
+      var closeTimer = null;
+      menu.addEventListener("mouseenter", function () {
+        if (closeTimer) { clearTimeout(closeTimer); closeTimer = null; }
+        set(true);
+      });
+      menu.addEventListener("mouseleave", function () {
+        if (closeTimer) clearTimeout(closeTimer);
+        closeTimer = setTimeout(function () { set(false); }, 160);
+      });
       document.addEventListener("click", function () { set(false); });
       document.addEventListener("keydown", function (e) {
         if (e.key === "Escape") set(false);

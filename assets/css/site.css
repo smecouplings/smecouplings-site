@@ -344,3 +344,11 @@ p { margin: 0 0 1em; }
   margin-top: .1rem;
 }
 .nav-menu__panel a[aria-current="page"] { color: var(--steel); }
+
+/* 按钮与面板之间的隐形桥接区，避免鼠标经过空隙时关闭 */
+.nav-menu__panel::before {
+  content: "";
+  position: absolute;
+  left: -20px; right: -20px; top: -18px; height: 18px;
+}
+.nav-menu__panel { position: absolute; }
