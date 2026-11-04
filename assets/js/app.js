@@ -378,15 +378,25 @@
 
     /* 当前滚到哪个材料组 */
     function showGroup() {
-      /* offsetParent 为 null 才是真的隐藏；滚出视野的行 top 为负，仍要算作当前组 */
+      /* 以「当前正在跨越表头线的数据行」所属分组为准，避免慢一行 */
       var rows = Array.prototype.slice.call(wrap.querySelectorAll("tr.group-row"))
         .filter(function (r) { return r.offsetParent !== null; });
       if (!rows.length) { groupBar.style.display = "none"; return; }
-      var line = NAV + bar.offsetHeight - groupBar.offsetHeight;
+      var line = NAV + bar.offsetHeight - groupBar.offsetHeight + 2;
       var current = null;
-      rows.forEach(function (r) {
-        if (r.getBoundingClientRect().top <= line + 4) current = r;
-      });
+      for (var i = 0; i < rows.length; i++) {
+        var g = rows[i];
+        var next = rows[i + 1];
+        var startY = g.getBoundingClientRect().top;
+        var endY = next ? next.getBoundingClientRect().top : Infinity;
+        if (startY <= line && endY > line) { current = g; break; }
+      }
+      if (!current) {
+        /* 没命中（例如已滚过最后一组）就取最后一个在线上方的 */
+        rows.forEach(function (r) {
+          if (r.getBoundingClientRect().top <= line) current = r;
+        });
+      }
       if (!current) current = rows[0];
       if (!current) { groupBar.style.display = "none"; return; }
       var name = current.getAttribute("data-group") || "";
@@ -402,4 +412,5 @@
     wrap.addEventListener("scroll", sync, { passive: true });
     sync();
   })();
+
 })();
