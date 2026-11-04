@@ -747,3 +747,37 @@ table.data td.code .code-mask { font-weight: 700; }
   border: 1px solid var(--line); font-weight: 600;
 }
 .btn--quiet:hover { border-color: #c4c4c4; background: #fff; color: var(--ink); }
+
+/* ---------- 底部四选项 ---------- */
+.ways-end { background: var(--bg); border-top: 1px solid var(--line); padding: 2.8rem 0 3.2rem; }
+.ways-end__title { font-size: 1.1rem; margin: .2rem 0 1.4rem; }
+.ways-end__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: .8rem; }
+.end-card {
+  display: block; background: #fff; border: 1px solid var(--line);
+  border-left: 3px solid var(--amber); border-radius: 0 var(--radius) var(--radius) 0;
+  padding: .95rem 1rem; color: inherit;
+  transition: box-shadow .15s ease, border-color .15s ease, transform .15s ease;
+}
+.end-card:hover { color: inherit; box-shadow: var(--shadow); transform: translateY(-2px); }
+.end-card strong { display: block; font-size: .93rem; margin-bottom: .25rem; }
+.end-card span { font-size: .8rem; color: var(--muted); line-height: 1.5; }
+.end-card--fallback {
+  border-style: dashed; border-left-width: 3px; border-left-style: solid;
+  background: transparent;
+}
+.end-card--fallback strong { color: var(--amber); }
+
+/* 入场动画 */
+[data-stagger] > * {
+  opacity: 0; transform: translateY(14px);
+  transition: opacity .45s ease, transform .45s ease;
+}
+[data-stagger].is-in > * { opacity: 1; transform: none; }
+[data-stagger].is-in > *:nth-child(2) { transition-delay: .07s; }
+[data-stagger].is-in > *:nth-child(3) { transition-delay: .14s; }
+[data-stagger].is-in > *:nth-child(4) { transition-delay: .21s; }
+@media (prefers-reduced-motion: reduce) {
+  [data-stagger] > * { opacity: 1; transform: none; transition: none; }
+}
+@media (max-width: 1000px) { .ways-end__grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px) { .ways-end__grid { grid-template-columns: 1fr; } }

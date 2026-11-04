@@ -575,4 +575,24 @@
     });
   })();
 
+
+  /* ---------- 滚动入场 ---------- */
+  (function () {
+    var groups = document.querySelectorAll("[data-stagger]");
+    if (!groups.length) return;
+    if (!("IntersectionObserver" in window)) {
+      groups.forEach(function (g) { g.classList.add("is-in"); });
+      return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.classList.add("is-in");
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.25 });
+    groups.forEach(function (g) { io.observe(g); });
+  })();
+
 })();
