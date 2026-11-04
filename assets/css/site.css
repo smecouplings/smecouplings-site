@@ -362,3 +362,11 @@ p { margin: 0 0 1em; }
   transition: background .15s ease, color .15s ease, border-color .15s ease;
 }
 .social a:hover { background: var(--amber); border-color: var(--amber); color: #fff; }
+
+/* ---------- 首屏 C 局部 ---------- */
+.hero-mark {
+  position: absolute; right: -6%; top: 50%; transform: translateY(-50%);
+  width: min(56vw, 820px); height: auto;
+  color: #fff; opacity: .07; pointer-events: none;
+}
+@media (max-width: 1000px) { .hero-mark { display: none; } }
