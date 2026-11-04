@@ -292,3 +292,30 @@ p { margin: 0 0 1em; }
 
 /* hidden 属性要压住 display:grid / flex 的组件样式 */
 [hidden] { display: none !important; }
+
+/* ---------- 导航下拉 ---------- */
+.nav-menu { position: relative; }
+.nav-menu__btn {
+  font: inherit; color: var(--ink); background: none; border: 0; cursor: pointer;
+  display: inline-flex; align-items: center; gap: .35rem; padding: 0;
+}
+.nav-menu__btn[aria-expanded="true"], .nav-menu__btn:hover { color: var(--amber); }
+.nav-caret {
+  width: 7px; height: 7px; border-right: 1.6px solid currentColor;
+  border-bottom: 1.6px solid currentColor; transform: rotate(45deg) translateY(-1px);
+}
+.nav-menu__panel {
+  position: absolute; top: calc(100% + 14px); left: 50%; transform: translateX(-50%);
+  width: 330px; background: #fff; border: 1px solid var(--line); border-radius: 10px;
+  box-shadow: 0 14px 34px rgba(20,20,20,.12); padding: .6rem; display: none; z-index: 120;
+}
+.nav-menu.is-open .nav-menu__panel { display: block; }
+.nav-menu__panel a {
+  display: block; padding: .55rem .7rem; border-radius: 7px; color: var(--ink); font-weight: 600;
+}
+.nav-menu__panel a:hover { background: #f5f5f6; color: var(--ink); }
+.nav-menu__panel a span { display: block; font-weight: 400; font-size: .76rem; color: var(--muted); }
+.nav-menu__label {
+  margin: .5rem .7rem .2rem; font-size: .68rem; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--muted);
+}

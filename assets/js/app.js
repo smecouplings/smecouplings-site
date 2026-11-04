@@ -623,4 +623,27 @@
     groups.forEach(function (g) { io.observe(g); });
   })();
 
+
+  /* ---------- 导航下拉 ---------- */
+  (function () {
+    document.querySelectorAll("[data-menu]").forEach(function (menu) {
+      var btn = menu.querySelector(".nav-menu__btn");
+      if (!btn) return;
+      function set(open) {
+        menu.classList.toggle("is-open", open);
+        btn.setAttribute("aria-expanded", open ? "true" : "false");
+      }
+      btn.addEventListener("click", function (e) {
+        e.stopPropagation();
+        set(!menu.classList.contains("is-open"));
+      });
+      menu.addEventListener("mouseenter", function () { set(true); });
+      menu.addEventListener("mouseleave", function () { set(false); });
+      document.addEventListener("click", function () { set(false); });
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") set(false);
+      });
+    });
+  })();
+
 })();

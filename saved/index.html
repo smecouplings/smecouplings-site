@@ -20,7 +20,25 @@
     </a>
     <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
     <nav class="site-nav">
-      <a href="../index.html">Home</a><a href="../systems/cam-and-groove/">Cam & Groove</a><a href="../codes/">Codes</a><a href="../saved/" aria-current="page">Saved</a><a href="../contact.html">Contact</a>
+      <a href="../index.html">Home</a>
+      <div class="nav-menu" data-menu>
+        <button type="button" class="nav-menu__btn" aria-expanded="false">Systems
+          <span class="nav-caret" aria-hidden="true"></span></button>
+        <div class="nav-menu__panel">
+          <p class="nav-menu__label">Live</p>
+          <a href="../systems/cam-and-groove/">Cam &amp; Groove
+            <span>camlock, AA59326 / EN 14420-7</span></a>
+          <a href="../systems/guillemin/">Guillemin
+            <span>symmetric couplings, NF E29-572</span></a>
+          <p class="nav-menu__label">Connections</p>
+          <a href="../connections/flange-end/">Flange end
+            <span>across all systems</span></a>
+          <p class="nav-menu__label">Everything</p>
+          <a href="../systems/">All systems
+            <span>21 families in the catalogue</span></a>
+        </div>
+      </div>
+      <a href="../codes/">Codes</a><a href="../saved/" aria-current="page">Saved</a><a href="../contact.html">Contact</a>
       <a class="btn btn--primary" href="../contact.html">Request a quote</a>
     </nav>
   </div>
