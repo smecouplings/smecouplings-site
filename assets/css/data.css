@@ -859,3 +859,18 @@ table.data td.code .code-mask { font-weight: 700; }
 /* 说明块改为竖排，层次更清楚 */
 .range-reminder { display: block; }
 .range-reminder__nums { margin-top: .1rem; }
+
+/* 说明块与幽灵卡同宽、右对齐 */
+.range-reminder {
+  width: calc(50% - .4rem);
+  margin-left: auto;
+  padding: 1rem 1.15rem 1.1rem;
+}
+.range-reminder__tail { left: 50%; }
+.range-reminder h3 { font-size: 1rem; margin-bottom: .4rem; }
+.range-reminder__nums { font-size: .95rem; margin-bottom: .35rem; }
+.range-reminder__nums strong { font-size: 1.1rem; }
+.range-reminder__fam { font-size: .84rem; }
+@media (max-width: 780px) {
+  .range-reminder { width: 100%; }
+}
