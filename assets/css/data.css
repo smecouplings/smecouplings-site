@@ -828,3 +828,34 @@ table.data td.code .code-mask { font-weight: 700; }
   50% { transform: translateY(-6px); opacity: 1; }
 }
 @media (prefers-reduced-motion: reduce) { .range-up { animation: none; } }
+
+/* ---------- 预览说明块（尖角指向幽灵卡） ---------- */
+.range-reminder {
+  position: relative; margin-top: 2.2rem;
+  background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 1.35rem 1.6rem 1.45rem;
+}
+.range-reminder__tail {
+  position: absolute; top: -8px; left: 75%; margin-left: -8px;
+  width: 16px; height: 16px; transform: rotate(45deg);
+  background: #fff; border-left: 1px solid var(--line); border-top: 1px solid var(--line);
+}
+.range-reminder h3 { margin: 0 0 .5rem; font-size: .95rem; color: var(--ink); }
+.range-reminder__nums {
+  margin: 0 0 .45rem; font-size: 1.02rem; color: var(--ink);
+  display: flex; align-items: baseline; gap: .5rem; flex-wrap: wrap;
+}
+.range-reminder__nums strong {
+  font-family: ui-monospace, "Cascadia Mono", Consolas, monospace;
+  font-size: 1.24rem; color: var(--amber); font-weight: 700; letter-spacing: -.01em;
+}
+.range-reminder__nums em { font-style: normal; color: #c9c9c9; }
+.range-reminder__fam { margin: 0; font-size: .86rem; color: var(--muted); max-width: 66ch; }
+
+@media (max-width: 780px) {
+  .range-reminder__tail { left: 50%; }
+}
+
+/* 说明块改为竖排，层次更清楚 */
+.range-reminder { display: block; }
+.range-reminder__nums { margin-top: .1rem; }

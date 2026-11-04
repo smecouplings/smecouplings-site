@@ -532,7 +532,9 @@
     var gridHTML = grid.innerHTML;
     var ctaHTML = document.querySelector(".range-cta");
     var rangeTitle = document.getElementById("rangeTitle");
-    var rangeMeta = document.getElementById("rangeMeta");
+    var restItems = document.getElementById("restItems");
+    var restCodes = document.getElementById("restCodes");
+    var rangeFamilies = document.getElementById("rangeFamilies");
     var bandName = document.getElementById("sysBandName");
     var bandMeta = document.getElementById("sysBandMeta");
     var eyebrow = document.getElementById("sysEyebrow");
@@ -566,8 +568,12 @@
             cta.hidden = false;
             cta.href = info.cta || "systems/cam-and-groove/";
           }
-          if (rangeTitle) rangeTitle.textContent = info.ctaTitle || "The full range";
-          if (rangeMeta) rangeMeta.textContent = info.ctaMeta || "";
+          if (rangeTitle) rangeTitle.textContent = info.ctaTitle || "Not the whole range";
+          if (restItems && info.restItems != null) restItems.textContent = info.restItems;
+          if (restCodes && info.restCodes != null) {
+            restCodes.textContent = info.restCodes.toLocaleString("en-US");
+          }
+          if (rangeFamilies && info.families) rangeFamilies.textContent = info.families;
           if (eyebrow) eyebrow.textContent = isG ? "Guillemin · preview" : defaults.eyebrow;
           if (title) title.textContent = isG ? "Which fitting does the job?" : defaults.title;
           if (lede) {
