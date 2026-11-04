@@ -276,4 +276,44 @@
     el.addEventListener("mouseenter", function () { showPop(el); });
     el.addEventListener("mouseleave", hidePop);
   });
+
+  /* ---------- 表格：页面级吸顶表头 ---------- */
+  (function () {
+    var wrap = document.querySelector(".table-wrap");
+    if (!wrap) return;
+    var table = wrap.querySelector("table.data");
+    if (!table) return;
+    var thead = table.querySelector("thead");
+    if (!thead) return;
+
+    var NAV = 68;
+    var bar = document.createElement("div");
+    bar.className = "sticky-head";
+    var inner = document.createElement("div");
+    inner.style.willChange = "transform";
+    var clone = document.createElement("table");
+    clone.style.width = "100%";
+    clone.appendChild(thead.cloneNode(true));
+    inner.appendChild(clone);
+    bar.appendChild(inner);
+    document.body.appendChild(bar);
+    bar.style.display = "none";
+
+    function sync() {
+      var r = wrap.getBoundingClientRect();
+      var h = thead.offsetHeight;
+      var show = r.top < NAV && r.bottom > NAV + h + 4;
+      if (!show) { bar.style.display = "none"; return; }
+      bar.style.display = "block";
+      bar.style.left = r.left + "px";
+      bar.style.width = wrap.clientWidth + "px";
+      clone.style.width = table.offsetWidth + "px";
+      inner.style.transform = "translateX(" + (-wrap.scrollLeft) + "px)";
+    }
+
+    window.addEventListener("scroll", sync, { passive: true });
+    window.addEventListener("resize", sync);
+    wrap.addEventListener("scroll", sync, { passive: true });
+    sync();
+  })();
 })();
