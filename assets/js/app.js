@@ -357,13 +357,16 @@
 
     /* 当前滚到哪个材料组 */
     function showGroup() {
-      var rows = Array.prototype.slice.call(wrap.querySelectorAll("tr.group-row"));
+      var rows = Array.prototype.slice.call(wrap.querySelectorAll("tr.group-row"))
+        .filter(function (r) { return !r.classList.contains("is-hidden"); });
       if (!rows.length) { groupBar.style.display = "none"; return; }
       var line = NAV + bar.offsetHeight - groupBar.offsetHeight;
       var current = null;
       rows.forEach(function (r) {
-        if (r.getBoundingClientRect().top <= line + 4) current = r;
+        var top = r.getBoundingClientRect().top;
+        if (top > 0 && top <= line + 4) current = r;
       });
+      if (!current) current = rows[0];
       if (!current) { groupBar.style.display = "none"; return; }
       var name = current.getAttribute("data-group") || "";
       var strong = current.querySelector(".group-cell strong");
