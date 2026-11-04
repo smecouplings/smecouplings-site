@@ -425,6 +425,9 @@
 
     if (!root) return;
 
+    var printBtn = document.getElementById("printSaved");
+    if (printBtn) printBtn.addEventListener("click", function () { window.print(); });
+
     var clear = document.getElementById("clearSaved");
     if (clear) {
       clear.addEventListener("click", function () {

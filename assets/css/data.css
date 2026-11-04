@@ -548,3 +548,23 @@ table.data td.code .code-mask { font-weight: 700; }
 /* ---------- 已保存清单 ---------- */
 #savedRoot.items { margin-top: 0; }
 #savedRoot .item strong { font-size: 1rem; }
+
+/* ---------- 保存说明 ---------- */
+.actions-note {
+  margin: .7rem 0 0;
+  font-size: .82rem;
+  line-height: 1.6;
+  color: var(--muted);
+  max-width: 62ch;
+}
+.actions-note strong { color: var(--ink); }
+.actions-note a { color: var(--steel); }
+
+@media print {
+  #clearSaved, #mailSaved, #printSaved, .site-header, .site-footer,
+  .notice, .breadcrumb, .page-head .eyebrow { display: none !important; }
+  .page-head { background: #fff !important; color: #000 !important; padding: .5rem 0 0 !important; }
+  .page-head h1, .page-head p { color: #000 !important; }
+  #savedRoot.items { display: block; }
+  #savedRoot .item { border: 1px solid #ccc; page-break-inside: avoid; margin-bottom: .4rem; }
+}
