@@ -145,6 +145,7 @@
       });
       if (counter) counter.textContent = shown;
       updateGroups();
+      if (window.smeSyncSticky) window.smeSyncSticky();
     };
 
     selects.forEach(function (s) { s.addEventListener("change", apply); });
@@ -336,6 +337,26 @@
       attached = false;
     }
 
+    /* 逐列复制真实表头的宽度，保证克隆与表格对齐 */
+    function syncWidths() {
+      var src = thead.querySelectorAll("th");
+      var dst = clone.querySelectorAll("th");
+      if (!src.length || src.length !== dst.length) return;
+      clone.style.tableLayout = "fixed";
+      clone.style.width = table.offsetWidth + "px";
+      var total = 0;
+      for (var i = 0; i < src.length; i++) {
+        var w = src[i].getBoundingClientRect().width;
+        dst[i].style.width = w + "px";
+        total += w;
+      }
+      clone.style.width = total + "px";
+      inner.style.width = total + "px";
+    }
+    window.smeSyncSticky = function () {
+      if (bar.style.display !== "none") syncWidths();
+    };
+
     function sync() {
       var r = wrap.getBoundingClientRect();
       var h = thead.offsetHeight;
@@ -349,7 +370,7 @@
       bar.style.display = "block";
       bar.style.left = r.left + "px";
       bar.style.width = wrap.clientWidth + "px";
-      clone.style.width = table.offsetWidth + "px";
+      syncWidths();
       inner.style.transform = "translateX(" + (-wrap.scrollLeft) + "px)";
       attach();
       showGroup();
