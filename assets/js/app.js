@@ -1,4 +1,13 @@
-﻿/* 产品页交互（收藏/比较/打印）+ 表格筛选 + 编号索引 + 枢纽页切换 */
+/* SME Couplings — 页面交互
+   1) 产品页：保存 / 对比 / 打印
+   2) 产品页：材质卡组切换
+   3) 产品页：订货表筛选
+   4) 编号索引：过滤 + 遮罩开关
+   5) 枢纽页：体系切换
+   6) 对比页：渲染
+   7) 首页：编号直达
+   8) 表格缩略图：悬浮大图
+*/
 (function () {
   "use strict";
 
@@ -16,7 +25,7 @@
     return max ? list.slice(-max) : list;
   }
 
-  /* ---------- 产品页动作条 ---------- */
+  /* ---------- 1. 动作条 ---------- */
   var actions = document.querySelector(".actions");
   if (actions) {
     var slug = actions.getAttribute("data-slug");
@@ -24,63 +33,61 @@
     var bCmp = actions.querySelector('[data-act="compare"]');
     var bPrint = actions.querySelector('[data-act="print"]');
 
-    var sync = function () {
+    var syncActions = function () {
       var saved = read(LS_SAVE).indexOf(slug) > -1;
       var cmp = read(LS_CMP).indexOf(slug) > -1;
       if (bSave) { bSave.textContent = saved ? "★ Saved" : "☆ Save"; bSave.classList.toggle("is-on", saved); }
       if (bCmp) { bCmp.textContent = cmp ? "⇄ In compare" : "⇄ Compare"; bCmp.classList.toggle("is-on", cmp); }
     };
 
-    if (bSave) bSave.addEventListener("click", function () { write(LS_SAVE, toggle(read(LS_SAVE), slug)); sync(); });
-    if (bCmp) bCmp.addEventListener("click", function () {
-      var list = read(LS_CMP);
-      var sys = actions.getAttribute("data-system") || "cam-and-groove";
-      var stored = localStorage.getItem("sme_compare_system");
-      if (list.length && stored && stored !== sys) {
-        if (!confirm("Compare works within one system. Clear the current selection and start a new one?")) return;
-        list = [];
-      }
-      list = toggle(list, slug, 4);
-      write(LS_CMP, list);
-      localStorage.setItem("sme_compare_system", list.length ? sys : "");
-      sync();
-    });
+    if (bSave) bSave.addEventListener("click", function () { write(LS_SAVE, toggle(read(LS_SAVE), slug)); syncActions(); });
+    if (bCmp) {
+      bCmp.addEventListener("click", function () {
+        var list = read(LS_CMP);
+        var sys = actions.getAttribute("data-system") || "cam-and-groove";
+        var stored = localStorage.getItem("sme_compare_system");
+        if (list.length && stored && stored !== sys) {
+          if (!confirm("Compare works within one system. Clear the current selection and start a new one?")) return;
+          list = [];
+        }
+        list = toggle(list, slug, 4);
+        write(LS_CMP, list);
+        localStorage.setItem("sme_compare_system", list.length ? sys : "");
+        syncActions();
+      });
+    }
     if (bPrint) bPrint.addEventListener("click", function () { window.print(); });
-    sync();
+    syncActions();
   }
 
-
-  /* ---------- 产品图：按材质切换 ---------- */
+  /* ---------- 2. 材质卡组 ---------- */
   var gallery = document.querySelector(".gallery[data-materials]");
   if (gallery) {
-    var ph = gallery.querySelector(".gallery-ph");
-    var mats = Array.prototype.slice.call(gallery.querySelectorAll(".mat"));
-    var setMat = function (mat) {
-      mats.forEach(function (b) { b.classList.toggle("is-on", b.getAttribute("data-mat") === mat); });
-      if (ph) ph.textContent = mat + " photo — being added";
-      var img = gallery.querySelector("img[data-mat-img]");
-      if (img) {
-        var src = img.getAttribute("data-src-" + mat.toLowerCase());
-        if (src) img.src = src;
-      }
+    var cards = Array.prototype.slice.call(gallery.querySelectorAll(".deck-card"));
+    var setMaterial = function (mat) {
+      cards.forEach(function (b) {
+        b.classList.toggle("is-on", b.getAttribute("data-mat") === mat);
+      });
     };
-    mats.forEach(function (b) {
-      b.addEventListener("click", function () { setMat(b.getAttribute("data-mat")); });
+    window.smeSetMaterial = setMaterial;
+    cards.forEach(function (b) {
+      b.addEventListener("click", function () { setMaterial(b.getAttribute("data-mat")); });
     });
-    window.smeSetMaterial = setMat;
     var matSelect = document.querySelector('[data-filter="material"]');
     if (matSelect) {
       matSelect.addEventListener("change", function () {
-        if (matSelect.value) setMat(matSelect.value);
+        if (matSelect.value) setMaterial(matSelect.value);
       });
     }
   }
-  /* ---------- 产品页：按属性筛选订货表 ---------- */
+
+  /* ---------- 3. 订货表筛选 ---------- */
   var table = document.getElementById("codeTable");
   if (table) {
     var selects = Array.prototype.slice.call(document.querySelectorAll("[data-filter]"));
     var rows = Array.prototype.slice.call(table.querySelectorAll("tbody tr:not(.group-row)"));
     var groupRows = Array.prototype.slice.call(table.querySelectorAll("tr.group-row"));
+    var counter = document.getElementById("rowCount");
 
     var updateGroups = function () {
       groupRows.forEach(function (g) {
@@ -91,7 +98,7 @@
         g.classList.toggle("is-hidden", !any);
       });
     };
-    var counter = document.getElementById("rowCount");
+
     var apply = function () {
       var active = selects.map(function (s) { return [s.getAttribute("data-filter"), s.value]; })
         .filter(function (p) { return p[1]; });
@@ -104,21 +111,12 @@
       if (counter) counter.textContent = shown;
       updateGroups();
     };
+
     selects.forEach(function (s) { s.addEventListener("change", apply); });
-
-    groupRows.forEach(function (g) {
-      g.addEventListener("click", function () {
-        var mat = g.getAttribute("data-group");
-        if (window.smeSetMaterial) window.smeSetMaterial(mat);
-        var sel = document.querySelector('[data-filter="material"]');
-        if (sel && sel.value !== mat) { sel.value = mat; apply(); }
-      });
-    });
-
     updateGroups();
   }
 
-  /* ---------- 编号索引：过滤 + 显示/隐藏 ---------- */
+  /* ---------- 4. 编号索引 ---------- */
   var filter = document.getElementById("codeFilter");
   var codeTable = document.getElementById("allCodes");
   if (filter && codeTable) {
@@ -146,11 +144,11 @@
     }
 
     var initial = new URLSearchParams(location.search).get("q");
-    if (initial) { filter.value = initial; }
+    if (initial) filter.value = initial;
     run();
   }
 
-  /* ---------- 枢纽页：体系切换 ---------- */
+  /* ---------- 5. 枢纽页体系切换 ---------- */
   var chips = document.getElementById("hubChips");
   if (chips) {
     var hubRows = Array.prototype.slice.call(document.querySelectorAll("#hubTable tbody tr[data-system]"));
@@ -167,7 +165,7 @@
     });
   }
 
-  /* ---------- 比较页 ---------- */
+  /* ---------- 6. 对比页 ---------- */
   var root = document.getElementById("compareRoot");
   if (root) {
     var picks = read(LS_CMP);
@@ -203,7 +201,7 @@
     }
   }
 
-  /* ---------- 首页：编号直达 ---------- */
+  /* ---------- 7. 首页编号直达 ---------- */
   var search = document.getElementById("codeSearch");
   var go = document.getElementById("codeGo");
   if (search && go) {
@@ -214,4 +212,33 @@
     go.addEventListener("click", jump);
     search.addEventListener("keydown", function (e) { if (e.key === "Enter") jump(); });
   }
+
+  /* ---------- 8. 表格缩略图：悬浮大图 ---------- */
+  var pop = null;
+  function ensurePop() {
+    if (pop) return pop;
+    pop = document.createElement("div");
+    pop.id = "imgPop";
+    document.body.appendChild(pop);
+    return pop;
+  }
+  function showPop(el) {
+    var src = el.getAttribute("data-pop");
+    if (!src) return;
+    var box = ensurePop();
+    box.innerHTML = '<img src="' + src + '" alt="">';
+    box.style.display = "block";
+    var r = el.getBoundingClientRect();
+    var w = 240;
+    var left = r.right + 14;
+    if (left + w > window.innerWidth - 12) left = r.left - w - 14;
+    var top = Math.min(Math.max(12, r.top - 60), window.innerHeight - 260);
+    box.style.left = Math.max(12, left) + "px";
+    box.style.top = top + "px";
+  }
+  function hidePop() { if (pop) pop.style.display = "none"; }
+  document.querySelectorAll(".thumb[data-pop]").forEach(function (el) {
+    el.addEventListener("mouseenter", function () { showPop(el); });
+    el.addEventListener("mouseleave", hidePop);
+  });
 })();

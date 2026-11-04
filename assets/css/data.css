@@ -270,3 +270,23 @@ tr.group-row.is-hidden { display: none; }
 /* 表格里的缩略图：严格 22px，默认半透明 */
 .group-cell img { width: 22px; height: 22px; opacity: .55; transition: opacity .15s ease; }
 table.data tr.group-row:hover .group-cell img { opacity: 1; }
+
+/* ---------- 材质色标 ---------- */
+.swatch {
+  display: inline-block; width: 9px; height: 9px; border-radius: 2px;
+  background: var(--c); box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .13);
+  vertical-align: middle; margin-right: .38rem; flex: none;
+}
+.mat-tag { white-space: nowrap; }
+
+/* 缩略图与浮层 */
+.thumb { display: inline-flex; width: 22px; height: 22px; flex: none; }
+.thumb img { width: 22px; height: 22px; object-fit: contain; opacity: .55; transition: opacity .15s ease; }
+tr.group-row:hover .thumb img { opacity: 1; }
+.thumb--empty { opacity: 0; }
+#imgPop {
+  position: fixed; display: none; z-index: 200; padding: 6px;
+  background: #fff; border: 1px solid var(--line); border-radius: 10px;
+  box-shadow: 0 14px 36px rgba(14, 28, 43, .18); pointer-events: none;
+}
+#imgPop img { display: block; width: 228px; height: auto; }
