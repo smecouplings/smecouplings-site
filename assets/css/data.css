@@ -521,3 +521,26 @@ table.data td.code {
 }
 table.data td.code .code-real,
 table.data td.code .code-mask { font-weight: 700; }
+
+/* ---------- 吸顶条与表格字体严格对齐 ---------- */
+.sticky-head th {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
+  font-size: .78rem;
+  font-weight: 650;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: #43536a;
+}
+.sticky-group {
+  font-family: ui-monospace, "Cascadia Mono", "SF Mono", Consolas, "Liberation Mono", monospace;
+  font-size: .95rem;
+  letter-spacing: .01em;
+  color: var(--navy);
+}
+.sticky-group em {
+  font-family: inherit;
+  font-size: .76rem;
+  letter-spacing: .01em;
+}
+.sticky-group .mat-tag { font-weight: 700; }
+.sticky-group .swatch { width: 10px; height: 10px; }
