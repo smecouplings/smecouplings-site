@@ -978,3 +978,18 @@ a.addr-card:hover h3 { color: var(--amber); }
   font-style: normal; transition: transform .18s ease;
 }
 a.addr-card:hover .addr-map em { transform: translate(2px, -2px); }
+
+/* ---------- 内嵌地图 ---------- */
+.map-embed {
+  margin-top: 1.2rem; border: 1px solid var(--line); border-radius: var(--radius);
+  overflow: hidden; background: #eee;
+}
+.map-embed iframe { display: block; width: 100%; height: 340px; border: 0; }
+@media (max-width: 700px) { .map-embed iframe { height: 240px; } }
+
+.addr-card { cursor: pointer; }
+.addr-card.is-active {
+  border-color: var(--amber); border-top-color: var(--amber);
+  box-shadow: 0 0 0 1px var(--amber) inset;
+}
+.addr-card.is-active h3 { color: var(--amber); }

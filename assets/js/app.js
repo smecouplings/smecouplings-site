@@ -683,4 +683,25 @@
     });
   })();
 
+
+  /* ---------- 地址卡切换地图 ---------- */
+  (function () {
+    var frame = document.getElementById("siteMap");
+    var cards = document.querySelectorAll(".addr-card[data-map]");
+    if (!frame || !cards.length) return;
+    function pick(card) {
+      cards.forEach(function (c) { c.classList.toggle("is-active", c === card); });
+      frame.src = card.getAttribute("data-map");
+    }
+    cards.forEach(function (card) {
+      card.addEventListener("click", function (e) {
+        if (e.target.closest("a")) return;
+        pick(card);
+      });
+      card.addEventListener("keydown", function (e) {
+        if (e.key === "Enter" || e.key === " ") { e.preventDefault(); pick(card); }
+      });
+    });
+  })();
+
 })();
