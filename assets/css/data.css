@@ -993,3 +993,13 @@ a.addr-card:hover .addr-map em { transform: translate(2px, -2px); }
   box-shadow: 0 0 0 1px var(--amber) inset;
 }
 .addr-card.is-active h3 { color: var(--amber); }
+
+/* ---------- 每个地址配一张小地图 ---------- */
+.addr-grid--maps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.addr-grid--maps .addr-card { padding-bottom: 1.1rem; }
+.addr-mapframe {
+  margin-top: .9rem; border: 1px solid var(--line); border-radius: 8px;
+  overflow: hidden; background: #eef1f4;
+}
+.addr-mapframe iframe { display: block; width: 100%; height: 180px; border: 0; }
+@media (max-width: 900px) { .addr-grid--maps { grid-template-columns: 1fr; } }
